@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+/* ========== header ========== */
+.spNav_ul > li:first-child {
+	border-bottom: 1px solid #000;
+}
+.spNav_ul > li:nth-child(4) {
+	border-bottom: none;
+}
+
+/* ========== main ========== */
+.main {
+	overflow: hidden;
+	padding: 20px;
+	font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+}
+.mainRight {
+	display: none;
+	width: 250px;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.back_to_top {
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	background-color: rgba(120, 120, 120, 0.5);
+	border-radius: 5px;
+	color: #FFF;
+	text-align: center;
+	line-height: 40px;
+	right: 20px;
+	bottom: 90px;
+}
+.back_to_top:hover {
+	background-color: rgba(203, 27, 69, 1);
+}
+.arrow {
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	width: 0;
+	height: 0;
+	border-top: 20px solid transparent;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 20px solid #fff;
+	opacity: 0.8;
+}
+.mainLi_ul {
+	text-align: center;
+}
+.mainLi_ul > li {
+	display: inline-block;
+}
+.manga {
+	display: block;
+	margin: 10px 30px;
+	width: 150px;
+	height: 200px;
+}
+.kyoutengu0 {
+	background-image: url(../comic/kyoutengu0/kyoutengu0.jpg);
+}
+.kyoutengu1 {
+	background-image: url(../comic/kyoutengu1/kyoutengu1.jpg);
+}
+.kyoutengu2 {
+	background-image: url(../comic/kyoutengu2/kyoutengu2.jpg);
+}
+.kyoutengu3 {
+	background-image: url(../comic/kyoutengu3/kyoutengu3.jpg);
+}
+.kyoutengu4 {
+	background-image: url(../comic/kyoutengu4/kyoutengu4.jpg);
+}
+.kyoutengu5 {
+	background-image: url(../comic/kyoutengu5/kyoutengu5.jpg);
+}
+.kyoutenguLast {
+	background-image: url(../comic/kyoutenguLast/kyoutenguLast.jpg);
+}
+.kimikimi {
+	background-image: url(../comic/kimikimi/kimikimi.jpg);
+}
+.hinekuremon {
+	background-image: url(../comic/hinekuremon/hinekuremon.jpg);
+}
+.mahounoresipi {
+	background-image: url(../comic/mahounoresipi/mahounoresipi.jpg);
+}
+.mangainner {
+	-webkit-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+	background-position: center;
+}
+.mangainner:hover {
+	background-color: #000;
+	opacity: 0.5;
+}
+.mangaTitle {
+	font-size: 18px;
+}
+/* レスポンシブの設定 */
+@media all and (min-width: 768px) {
+	.mainRight {
+		display: block;
+	}
+}

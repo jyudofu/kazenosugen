@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteCond %{HTTP:X-FC2-ORIGIN} !^.*\.fc2\.com$
+RewriteCond %{REQUEST_URI} !^.*\.(jpg|jpeg|png|gif|bmp|swf|mp3|wmv|mpg|mpeg|zip|lzh|rar)$ [NC]
+RewriteCond %{REMOTE_ADDR} !^50\.112\.133\.145$
+RewriteCond %{REMOTE_ADDR} !^50\.112\.176\.4$
+RewriteCond %{REMOTE_ADDR} !^50\.112\.163\.108$
+RewriteCond %{REMOTE_ADDR} !^50\.112\.176\.3$
+RewriteCond %{REMOTE_ADDR} !^50\.112\.175\.53$
+RewriteCond %{REMOTE_ADDR} !^50\.112\.175\.132$
+RewriteRule ^(.*)$ http://kazenosougen.jp/$1 [R,L]

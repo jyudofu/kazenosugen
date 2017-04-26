@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+a {
+	color: #fff;
+}
+body {
+	background-color: #696969;
+}
+.back, .next {
+	display: inline-block;
+	margin: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #FFF;
+	width: 100px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	background-color: rgba(28, 28, 28, 0.8);
+	-webkit-border-radius: 5px;
+	        border-radius: 5px;
+}
+.back:hover {
+	background-color: rgba(28, 28, 28, 1);
+}
+.arrow {
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	width: 0;
+	height: 0;
+	border-top: 20px solid transparent;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 20px solid #fff;
+	opacity: 0.8;
+}
+.backTxt {
+	text-decoration: none;
+	font-size: 16px;
+}
+.twitter-share-button {
+	float: right;
+	margin: 40px;
+}
+	/* mangaviewer css */
+	#viewer {
+		background-color: #696969;
+		padding-top: 30px;
+	}
+	#viewer .sheet{
+		width: 100%;
+		text-align: center;
+	}
+	#viewer img{
+		max-width: 450px;
+		cursor: pointer;
+	}
+
+	#viewer #page-link{
+		clear:both;
+		text-align:center;
+	}
+	#viewer #page-link .btn.active{
+		border: inset 2px #086A87;
+		background-color:#2E9AFE;
+	}
+	.btn-group button {
+		margin-top: 10px;
+		width: 120px;
+		height: 30px;
+		background-color: #FFF;
+		-webkit-border-radius: 10px;
+		        border-radius: 10px;
+	}
+	#page-list button {
+		margin-top: 10px;
+		width: 25px;
+		height: 25px;
+		text-align: center;
+	}
+	/* mangaviewer css */

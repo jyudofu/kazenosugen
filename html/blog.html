@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial=0">
+	<title>BLOG</title>
+	<meta name="keywords" content="風の草原, 樹土風, 樹土, 東方, 東方project, 東方狂天狗, 天狗, マフラー天子">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="../css/index.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="../css/blog.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="../css/animsition.css">
+
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/jquery.bgswitcher.js"></script>
+	<script type="text/javascript" src="../js/index.js"></script>
+	<script type="text/javascript" src="../js/animsition.min.js"></script>
+
+</head>
+<body>
+<div id="fb-root"></div>
+<div class="txt js-txt"></div>
+	<!-- ========== header ========== -->
+	<div class="header fixbar clearfix">
+		<div class="fixbar">
+			<nav class="headNav clearfix">
+				<ul class="headNav_ul">
+					<li><a href="../index.html">TOP</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+				</ul>
+			</nav>
+			<div class="logoinnr"><a href="../index.html"><img src="../img/logo.png" alt="ロゴ" class="logo"></a></div>
+			<nav class="headNav clearfix">
+				<ul class="headNav_ul">
+					<li><a href="blog.html" class="nowPage">BLOG</a></li>
+					<li><a href="illust.html">ILLUST</a></li>
+					<li><a href="comic.html">COMIC</a></li>
+				</ul>
+			</nav>
+			<div id="js_headNavButton" class="headNavButton">≡</div>
+			<nav id="js_spNav" class="spNav">
+				<ul class="spNav_ul">
+					<li><a href="../index.html">TOP</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="blog.html" class="nowPage">BLOG</a></li>
+					<li><a href="illust.html">ILLUST</a></li>
+					<li><a href="comic.html">COMIC</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div><!-- /header -->
+
+	<!-- ========== main ========== -->
+	<div class="main animsition">
+	<div class="fb-page" data-href="https://www.facebook.com/tabroomjp" data-width="500" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/tabroomjp"><a href="https://www.facebook.com/tabroomjp">TABROOM(タブルーム)</a></blockquote></div></div>
+	</div><!-- /main -->
+	<div id="js_backToTop"><a href="#" class="back_to_top"><div class="arrow"></div></a></div>
+
+	<!-- ========== footer ========== -->
+	<div class="footer clearfix">
+		<p class="copyright">© 2015 KAZENOSOUGEN All Rights Reserved.</p>
+		<nav class="fotNav">
+			<ul class="fotNav_ul">
+				<li><a href="../index.html">TOP</a></li>
+				<li><a href="about.html">ABOUT</a></li>
+				<li><a href="blog.html" class="nowPage">BLOG</a></li>
+				<li><a href="illust.html">ILLUST</a></li>
+				<li><a href="comic.html">COMIC</a></li>
+			</ul>
+		</nav>
+	</div><!-- /footer -->
+	<script type="text/javascript">
+		// ページ推移アニメーション
+				$(document).ready(function() {
+					$(".animsition").animsition({
+						inClass:	'fade-in-right',
+						outClass:	'fade-out-left',
+						inDuration:	1000,
+						outDuration:	800,
+						linkElement:	'.animsition-link',
+						//e.g.linkElement:'a:not([target="_blank"]):not([href^=#])'
+						touchSupport: 	true,
+						loading:	true,
+						loadingParentElement:	'body', //animsitionwrapperelement
+						loadingClass:	'animsition-loading',
+						unSupportCss:	['animation-duration',
+										'-webkit-animation-duration',
+										'-o-animation-duration'
+										]
+					});
+				});
+
+	</script>
+</body>
+</html>
