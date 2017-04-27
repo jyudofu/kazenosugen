@@ -194,6 +194,7 @@ a:hover {
 }
 /* ========== fotter ========== */
 .footer {
+	border-top: 1px solid #ddd;
 	background-color: #FFF;
 	overflow: hidden;
 }

@@ -7,6 +7,8 @@
 /* ========== main ========== */
 iframe{
 	width: 100%;
+	min-height: 500px;
+	height: 45vw;
 	margin: 0;
 	padding: 0;
 	vertical-align:bottom;
