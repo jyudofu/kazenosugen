@@ -4,7 +4,6 @@
 body {
 	font-size: 16px;
 	font-family: 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', 'MS PGothic', Arial, "Helvetica Neue", Helvetica, sans-serif,'游ゴシック体', 'YuGothic';
-	background-image: url(../img/bg.jpg);
 	color: #000;
 }
 a {
@@ -14,12 +13,15 @@ a {
 }
 a:hover {
 	color: #CB1B45;
-	font-weight: bold;
 }
 .nowPage {
 	color: #113285;
 	font-weight: bold;
 	border-bottom: 2px solid;
+}
+.spNav_ul .nowPage {
+	color: #CB1B45;
+	border-bottom: 0;
 }
 
 .fade {
@@ -27,6 +29,34 @@ a:hover {
 	-moz-transition: 0.3s ease-in-out;
 	-o-transition: 0.3s ease-in-out;
 	transition: 0.3s ease-in-out;
+}
+
+.back_to_top {
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	background-color: rgba(120, 120, 120, 0.5);
+	border-radius: 5px;
+	color: #FFF;
+	text-align: center;
+	line-height: 40px;
+	right: 20px;
+	bottom: 120px;
+}
+.back_to_top:hover {
+	background-color: rgba(203, 27, 69, 1);
+}
+.arrow {
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	width: 0;
+	height: 0;
+	border-top: 20px solid transparent;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 20px solid #fff;
+	opacity: 0.8;
 }
 /* ========== header ========== */
 .header {
@@ -37,11 +67,15 @@ a:hover {
 	background-color: #FFF;
 	z-index: 1;
 }
+.header a{
+	display: inline;
+}
 .header .fixbar {
 	position: absolute;
 	height: 100px;
 	background-color: #fff;
 	width: 100%;
+	border-bottom: 1px solid #ddd;
 }
 .header.fixed .fixbar {
 	position: fixed;
@@ -70,11 +104,14 @@ a:hover {
 }
 .headNavButton {
 	position: absolute;
+	padding: 5px;
 	width: 40px;
 	height: 40px;
 	background-color: #a9a9a9;
 	color: #FFF;
-	top: 40px;
+	margin: auto 0;
+	top: 0;
+	bottom: 0;
 	right: 40px;
 	border-radius: 5px;
 	color: #fff;
@@ -82,22 +119,61 @@ a:hover {
 	font-size: 20px;
 	line-height: 40px;
 	cursor: pointer;
+	box-sizing: border-box;
 }
-.a_headNavButton:before, .a_headNavButton:after {
-	display: block;
-	content: "";
+.menu-trigger,
+.menu-trigger span {
+	display: inline-block;
+	transition: all .4s;
+	box-sizing: border-box;
+}
+.menu-trigger {
+	position: relative;
+	width: 25px;
+	height: 25px;
+}
+.menu-trigger span {
 	position: absolute;
-	top: 50%;
-	left: 10px;
-	width: 20px;
+	left: 0;
+	width: 100%;
 	height: 4px;
-	background: #fff;
+	background-color: #fff;
+	border-radius: 4px;
 }
-.a_headNavButton:before {
-	margin-top: -6px;
+.menu-trigger span:nth-of-type(1) {
+	top: 0;
 }
-.a_headNavButton:after {
-	margin-top: 2px;
+.menu-trigger span:nth-of-type(2) {
+	top: 10.5px;
+}
+.menu-trigger span:nth-of-type(3) {
+	bottom: 0;
+}
+.menu-trigger.active span:nth-of-type(1) {
+	-webkit-transform: translateY(11px) rotate(-45deg);
+	transform: translateY(11px) rotate(-45deg);
+}
+.menu-trigger.active span:nth-of-type(2) {
+	left: 200%;
+	opacity: 0;
+	-webkit-transform: translateY(10px);
+	transform: translateY(10px);
+	-webkit-animation: active-menu-bar02 .8s forwards;
+	animation: active-menu-bar02 .8s forwards;
+}
+@-webkit-keyframes active-menu-bar02 {
+	100% {
+		height: 0;
+	}
+}
+@keyframes active-menu-bar02 {
+	100% {
+		height: 0;
+	}
+}
+.menu-trigger.active span:nth-of-type(3) {
+	-webkit-transform: translateY(-11px) rotate(45deg);
+	transform: translateY(-11px) rotate(45deg);
 }
 .spNav {
 	position: absolute;
@@ -107,7 +183,7 @@ a:hover {
 	text-align: center;
 	padding: 20px 0;
 	width: 250px;
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.8);
 }
 .spNav_ul > li {
 	margin-top: 20px;
@@ -115,19 +191,21 @@ a:hover {
 }
 .spNav_ul > li:first-child {
 	margin-top: 0;
-	border-bottom: none;
 }
 /* ========== fotter ========== */
 .footer {
-	height: 60px;
 	background-color: #FFF;
 	overflow: hidden;
 }
 .copyright {
-	padding: 0 50px;
-	line-height: 60px;
-	font-size: 11px;
+	padding: 10px;
+	font-size: 10px;
 	text-align: center;
+	background-color: #FFF;
+}
+.copyright span:before {
+	content: "\A" ;
+	white-space: pre;
 }
 .fotNav {
 	float: right;
@@ -137,7 +215,9 @@ a:hover {
 .fotNav_ul > li {
 	display: inline-block;
 	margin-left: 15px;
+	width: 50px;
 	font-size: 13px;
+	text-align: center;
 }
 .fotNav_ul > li:first-child {
 	margin-top: 0;
@@ -181,7 +261,11 @@ main:765px
 	.headNavButton {
 		display: none;
 	}
-	.copyright {
-		float: left;
+	body .pickUp {
+		display: block;
+	}
+	.copyright span:before {
+		content: "" ;
+		white-space: pre;
 	}
 }

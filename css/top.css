@@ -7,19 +7,19 @@ body {
 /* ========== main ========== */
 .main {
 	position: relative;
-	height: 80%;
 	overflow: hidden;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	     -o-background-size: cover;
 	        background-size: cover;
 	background-position: center;
-	background-color: #113285;
+	height: 76%;
 }
 .mainRight {
 	display: none;
 	width: 250px;
 	height: 100%;
+	min-height: 450px;
 	background-color: rgba(255, 255, 255, 0.5);
 }
 .side {
@@ -30,7 +30,9 @@ body {
 }
 .side_ul > li {
 	margin-top: 20px;
+	height: 26px;
 	border-bottom: 1px solid #000;
+	-webkit-box-sizing: border-box;
 }
 .side_ul > li:first-child {
 	margin-top: 0;
@@ -43,42 +45,43 @@ body {
 	border-bottom: none;
 }
 .pickUp {
+	display: none;
 	position: absolute;
-	bottom: 30px;
+	bottom: 80px;
 	right: 30px;
-	width: 250px;
-	height: 250px;
+	background-color: #fff;
+	font-size: 0;
+}
+.pickUp a {
+	display: inline-block;
+	font-size: 13px;
 }
 .pickUp_inner {
 	position: relative;
-	width: 250px;
-	height: 250px;
-	-webkit-border-radius: 250px;
-	        border-radius: 250px;
-	text-align: center;
-	background-color: #2EA9DF;
 }
-.pickUp_inner:hover {
-	background-color: #516E41;
+.pickUpNew {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	padding: 5px;
+	color: #fff;
+	background-color: #CB1B45;
+}
+.pickUpTxt {
+	padding: 5px;
+	text-align: center;
+	color: #fff;
+	background-color: #622d18;
+	font-size: 16px;
 }
 .kyou_thum {
-	position: absolute;
-	margin: auto;
-	top: -20%;
-	left: 0;
-	right: 0;
-	width: 150px;
+	width: 200px;
+	vertical-align: bottom;
 }
-.kyou_text {
-	position: absolute;
-	margin: auto;
-	top: 40%;
-	left: 0;
-	right: 0;
-	width: 250px;
-	font-size: 17px;
-	font-weight: bold;
+.kyou_thum:hover {
+	opacity: 0.7;
 }
+
 /* レスポンシブの設定 */
 @media all and (min-width: 768px) {
 	.mainRight {

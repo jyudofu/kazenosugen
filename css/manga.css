@@ -1,22 +1,16 @@
 @charset "utf-8";
 
-a {
-	color: #fff;
-}
-body {
-	background-color: #696969;
-}
 .back, .next {
 	display: inline-block;
 	margin: 20px;
 	font-size: 20px;
 	font-weight: bold;
-	color: #FFF;
+	border: 1px solid #696969;
 	width: 100px;
 	height: 45px;
 	line-height: 45px;
 	text-align: center;
-	background-color: rgba(28, 28, 28, 0.8);
+	background-color: #fff;
 	-webkit-border-radius: 5px;
 	        border-radius: 5px;
 }
@@ -45,15 +39,14 @@ body {
 }
 	/* mangaviewer css */
 	#viewer {
-		background-color: #696969;
-		padding-top: 30px;
+		min-width: 860px;
 	}
 	#viewer .sheet{
 		width: 100%;
 		text-align: center;
 	}
 	#viewer img{
-		max-width: 450px;
+		height: 100%;
 		cursor: pointer;
 	}
 

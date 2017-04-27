@@ -9,6 +9,21 @@
 (function($) {
   'use strict';
 
+		// 背景スライドショー
+		jQuery(function($) {
+			$('.bgsw').bgSwitcher({
+				images: [
+          'img/summerdance-top.png',
+          'img/illust/soukatettui.png',
+          'img/illust/suijinsyourai.png',
+          'img/illust/takanare.png',
+          'img/illust/sleepingbeauty.png',
+          'img/illust/ikotenyoku.png'],
+				interval: 5000,
+				effect: "drop"
+			});
+		});
+
   var loadedImages = {},
 
       slice = Array.prototype.slice,
