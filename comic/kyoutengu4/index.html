@@ -17,7 +17,7 @@
 	$(document).ready(function() {
 		// 漫画ビュアープロパティ
 		var w = $(window).width();
-		var x = 768;
+		var x = 480;
 		if (w <= x) {
 			$('#viewer').mangaviewer({
 				page: 43,	//ページ数
@@ -37,14 +37,18 @@
 	</script>
 </head>
 <body>
-	<div class="clearfix">
+	<div class="head clearfix">
 		<div class="back"><a href="../" class="backTxt">◀︎ TOPへ</a></div>
 		<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-		<div class="next"><a href="../kyoutengu3/" class="backTxt">◀︎ 前へ</a></div>
-		<div class="next"><a href="../kyoutengu5/" class="backTxt">次へ ▶︎</a></div>
+		<div class="next"><a href="../kyoutengu3/" class="backTxt">◀︎ 前の話へ</a></div>
+		<div class="next"><a href="../kyoutengu5/" class="backTxt">次の話へ ▶︎</a></div>
 	</div>
 	<div id="viewer"></div>
+	<!-- ========== footer ========== -->
+	<div class="footer">
+	</div><!-- /footer -->
+	<div class="copyright">© 2015-2017 KAZENOSOUGEN All Rights Reserved.　<span>このサイト上にある画像・文章の複製・転載はご遠慮ください。</span></div>
 
 </body>
 </html>
