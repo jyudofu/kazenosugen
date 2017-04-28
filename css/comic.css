@@ -4,7 +4,12 @@
 .spNav_ul > li:first-child {
 	border-bottom: 1px solid #000;
 }
-
+.hide {
+	display: none;
+}
+li {
+	padding: 10px;
+}
 /* ========== main ========== */
 .main {
 	overflow: hidden;
@@ -28,9 +33,71 @@
 }
 .manga {
 	display: block;
-	margin: 10px 30px;
 	width: 100px;
 	height: 200px;
+}
+.selectGenre {
+	display: table;
+	width: 100%;
+	font-size: 14px;
+}
+.selectGenrebox {
+	display: table-cell;
+	width: 50%;
+	height: 400px;
+	line-height: 400px;
+	text-align: center;
+	cursor: pointer;
+	transition-duration: 1.0s;
+	color: #fff;
+	opacity: 0.5;
+	text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+
+}
+.selectGenrebox:hover {
+	opacity: 1;
+}
+.selected {
+	opacity: 1;
+}
+.touhou.firstSelect {
+	background:url(../img/illust/summerdance.png);
+	background-size: cover;
+	background-position: center;
+}
+.symphogear.firstSelect{
+	background:url(../img/illust/gekisou.png);
+	background-size: cover;
+	background-position: center;
+}
+.touhou, #touhou h2 {
+	background:#00a5e7;
+}
+.symphogear, #symphogear h2{
+	background: #d78114;
+}
+#touhou, #symphogear {
+	border: 1px solid;
+}
+#touhou {
+	border-color: #00a5e7;
+	opacity: 0.8;
+}
+#symphogear {
+	border-color: #d78114;
+	opacity: 0.8;
+}
+#touhou nav {
+	padding: 30px 20px;
+}
+#touhou h2, #symphogear h2 {
+	color: #fff;
+	text-align: center;
+}
+#symphogear p {
+	padding: 40px;
+	background-color: #000;
+	color: #fff;
 }
 .kyoutengu0 {
 	background-image: url(../comics/kyoutengu0/kyoutengu0.jpg);
@@ -73,6 +140,7 @@
 }
 .mangaTitle {
 	font-size: 18px;
+	text-align: center;
 }
 /* レスポンシブの設定 */
 @media all and (min-width: 768px) {

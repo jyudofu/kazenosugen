@@ -52,12 +52,29 @@ $(function(){
 		});
 	});
 
-	$(window).on('load',function(){
-		var $frame = $('.frame');
-		var innerHeight = $frame.get(0).contentWindow.document.body.scrollHeight;
-		var innerWidth = $frame.get(0).contentWindow.document.body.scrollWidth;
-		console.log(innerHeight);
-		$frame.attr('height', innerHeight + 'px');
-		$frame.attr('width', innerWidth + 'px');
+	// 漫画ページジャンル選択
+	$("#js_touhou").click(function() {
+		$(".selectGenrebox").css({
+			height: 40,
+			"line-height": "40px",
+			"border-radius": "10px 10px 0 0"
+		})
+		$("#symphogear").fadeOut(500);
+		$("#touhou").fadeIn(2000);
+		$(this).addClass("selected").removeClass("firstSelect");
+		$("#js_symphogear").removeClass("selected");
+		$("#js_symphogear").removeClass("firstSelect");
+	});
+	$("#js_symphogear").click(function() {
+		$(".selectGenrebox").css({
+			height: 40,
+			"line-height": "40px",
+			"border-radius": "10px 10px 0 0"
+		})
+		$("#touhou").fadeOut(500);
+		$("#symphogear").fadeIn(2000);
+		$(this).addClass("selected").removeClass("firstSelect");
+		$("#js_touhou").removeClass("selected");
+		$("#js_touhou").removeClass("firstSelect");
 	});
 });

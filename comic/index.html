@@ -54,7 +54,15 @@
 
 	<!-- ========== main ========== -->
 	<div class="main">
-		<div id="touhou">
+		<div class="selectGenre">
+			<div id="js_touhou" class="selectGenrebox touhou firstSelect">
+				<p>東方Project</p>
+			</div>
+			<div id="js_symphogear" class="selectGenrebox symphogear firstSelect">
+				<p>戦姫絶唱シンフォギア</p>
+			</div>
+		</div>
+		<div id="touhou" class="hide">
 			<!--<h2>東方天王禄シリーズ</h2>
 			<nav>
 				<ul class="mainLi_ul clearfix">
@@ -63,6 +71,13 @@
 				</ul>
 			</nav>
 			<hr>-->
+			<h2>霊夢×天子本</h2>
+			<nav>
+				<ul class="mainLi_ul clearfix">
+					<li><div class="mangainner hinekuremon fade"><a href="./hinekuremon/" class="manga"></a></div><p class="mangaTitle">ひねくれもん</p></li>
+					<li><div class="mangainner kimikimi fade"><a href="./kimikimi/" class="manga"></a></div><p class="mangaTitle">君に、君と</p></li>
+				</ul>
+			</nav>
 			<h2>東方狂天狗シリーズ</h2>
 			<nav>
 				<ul class="mainLi_ul clearfix">
@@ -75,14 +90,6 @@
 					<li><div class="mangainner kyoutenguLast fade"><a href="./kyoutenguLast/" class="manga"></a></div><p class="mangaTitle">東方狂天狗 終</p></li>
 				</ul>
 			</nav>
-			<hr>
-			<h2>霊夢×天子本</h2>
-			<nav>
-				<ul class="mainLi_ul clearfix">
-					<li><div class="mangainner hinekuremon fade"><a href="./hinekuremon/" class="manga"></a></div><p class="mangaTitle">ひねくれもん</p></li>
-					<li><div class="mangainner kimikimi fade"><a href="./kimikimi/" class="manga"></a></div><p class="mangaTitle">君に、君と</p></li>
-				</ul>
-			</nav><hr>
 			<h2>その他</h2>
 			<nav>
 				<ul class="mainLi_ul clearfix">
@@ -90,7 +97,9 @@
 				</ul>
 			</nav>
 		</div>
-		<div id="symphogear"></div>
+		<div id="symphogear" class="hide">
+			<p>Coming Soon...</p>
+		</div>
 	</div><!-- /main -->
 	<div id="js_backToTop"><a href="#" class="back_to_top"><div class="arrow"></div></a></div>
 
