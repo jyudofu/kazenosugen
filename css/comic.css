@@ -92,6 +92,8 @@ li {
 	padding: 30px 20px;
 }
 #touhou h2, #symphogear h2 {
+	height: 40px;
+	line-height: 40px;
 	color: #fff;
 	text-align: center;
 }
