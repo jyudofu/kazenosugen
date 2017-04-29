@@ -28,13 +28,14 @@ li {
 	font-size: 0;
 }
 .mainLi_ul > li {
-	width: 150px;
+	width: 100%;
+	max-width: 300px;
 	display: inline-block;
+	vertical-align: top;
 }
 .manga {
 	display: block;
-	width: 100px;
-	height: 200px;
+	height: 420px;
 }
 .selectGenre {
 	display: table;
@@ -99,6 +100,12 @@ li {
 	background-color: #000;
 	color: #fff;
 }
+.tenourokuU {
+	background-image: url(../comics/tenourokuU/tenourokuU.jpg);
+}
+.tenourokuTenKitou {
+	background-image: url(../comics/tenourokuTenKitou/tenourokuTenKitou.png);
+}
 .kyoutengu0 {
 	background-image: url(../comics/kyoutengu0/kyoutengu0.jpg);
 }
@@ -139,7 +146,9 @@ li {
 	opacity: 0.5;
 }
 .mangaTitle {
+	margin-top: 10px;
 	font-size: 18px;
+	line-height: 1.2;
 	text-align: center;
 }
 /* レスポンシブの設定 */
@@ -148,6 +157,6 @@ li {
 		display: block;
 	}
 	.mainLi_ul {
-		width: 780px;
+		width: 960px;
 	}
 }
