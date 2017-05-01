@@ -122,10 +122,12 @@ a:hover {
 }
 .sample {
 	max-width: 960px;
-	column-count: 3;
+	font-size: 0
 }
 .sample a {
-	margin-bottom: 20px;
+	display: inline-block;
+	width: 30%;
+	padding: 1.6%;
 }
 .sample img{
 	width: 100%;
@@ -229,8 +231,10 @@ a:hover {
 		padding: 10px 0;
 		width: 100%;
 	}
-	.sample {
-		column-count:1;
+	.sample a {
+		padding: 0;
+		margin-bottom: 20px;
+		width: 100%;
 	}
 	.store {
 		padding: 20px 20px 40px;
