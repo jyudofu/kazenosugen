@@ -1,0 +1,254 @@
+@charset "utf-8";
+
+body {
+	background-color: #232426;
+	color:#fff;
+}
+a:hover {
+	color: #000;
+}
+.head {
+	width: 100%;
+	position: absolute;
+}
+.headContent {
+	margin: 0 auto;
+	padding: 40px;
+	max-width: 960px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.logo {
+	float: left;
+	margin: 0;
+	max-width: 300px;
+	height: auto;
+}
+.logo img {
+	margin-bottom: 10px;
+	width: 100%;
+}
+.logo p {
+	text-align: right;
+	font-weight: bold;
+	color: #fff;
+}
+.event {
+	float: right;
+	padding: 20px 0;
+	font-size: 16px;
+	text-align: center;
+}
+
+.main {
+	margin-bottom: 50px;
+}
+.mainImg {
+	width: 100%;
+}
+.mainImg img {
+	width: 100%;
+}
+.catchCopy {
+	margin: 50px 0;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+.copy {
+	margin: 0 auto;
+	padding: 0 40px;
+	max-width: 960px;
+	width: 100%;
+	font-size: 18px;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+
+.about {
+	margin: 0 auto;
+	margin-bottom: 30px;
+	padding: 0 40px;
+	max-width: 960px;
+	box-sizing: border-box;
+}
+.about > h2 {
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.aboutImg, .aboutTxt {
+	float: left;
+	width: 65%;
+}
+.aboutImg {
+	width: 30%;
+}
+.aboutImg img {
+	width: 100%;
+}
+.aboutTxt {
+	margin-left: 5%;
+}
+.aboutTxt dt {
+	font-weight: 700;
+	position: relative;
+	margin-bottom: .5em;
+}
+.aboutTxt dt:after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	background-color: #666;
+	height: 1px;
+	display: block;
+}
+.aboutTxt h2 {
+	background-color: #232426;
+	display: inline-block;
+	font-weight: bold;
+	position: relative;
+	z-index: 2;
+	padding-right: 1em;
+}
+.aboutTxt dd {
+	margin-bottom: 30px;
+}
+.sample {
+	max-width: 960px;
+	column-count: 3;
+}
+.sample a {
+	margin-bottom: 20px;
+}
+.sample img{
+	width: 100%;
+}
+.store {
+	margin: 0 auto;
+	margin-bottom: 50px;
+	padding: 20px 40px 40px;
+	box-sizing:border-box;
+	text-align: center;
+}
+.store h2 {
+	font-size: 30px;
+	font-weight: bold;
+}
+.store img{
+	max-width: 566px;
+	width: 100%;
+}
+.linkButton {
+	padding: 20px 40px 50px;
+	background-color: #414141;
+	box-sizing:border-box;
+	text-align: center;
+}
+.linkButton h2{
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+.button {
+	display: block;
+	margin: 0 auto;
+	max-width: 500px;
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	text-align: center;
+	color: #fff;
+}
+.button:hover {
+	background-color: #fff;
+}
+.note {
+	margin-top: 20px;
+	font-size: 14px;
+	text-align: center;
+}
+
+.banner {
+	margin: 0 auto;
+	padding: 40px;
+	max-width: 960px;
+	text-align: center;
+}
+.banner h2 {
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+.endtweet {
+	margin: 0 auto;
+	max-width: 960px;
+	padding: 50px;
+	text-align: center;
+}
+.copyright {
+	color:#000;
+}
+/* レスポンシブの設定 */
+@media all and (max-width: 480px) {
+	.head {
+		position:relative;
+	}
+	.headContent {
+		padding: 20px;
+	}
+	.event {
+		width: 100%;
+	}
+	.catchCopy {
+		margin: 30px 0;
+		font-size: 20px;
+	}
+	.copy {
+		padding: 0 20px;
+		width: 300px;
+		font-size: 14px;
+		text-align: left;
+		box-sizing: border-box;
+	}
+	.about {
+		padding: 0 20px;
+		width: 300px;
+		box-sizing: border-box;
+	}
+	.aboutImg, .aboutTxt {
+		display: block;
+		margin: 0;
+		padding: 10px 0;
+		width: 100%;
+	}
+	.sample {
+		column-count:1;
+	}
+	.store {
+		padding: 20px 20px 40px;
+	}
+	.store img{
+		max-width: 300px;
+	}
+	.linkButton {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.button {
+		width: 250px;
+	}
+	.note {
+		padding: 0 20px;
+	}
+	.banner {
+		display: none;
+	}
+}

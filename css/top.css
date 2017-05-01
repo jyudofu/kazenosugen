@@ -47,8 +47,8 @@ body {
 .pickUp {
 	display: none;
 	position: absolute;
-	bottom: 80px;
-	right: 30px;
+	bottom: 20%;
+	right: 10%;
 	background-color: #fff;
 	font-size: 0;
 }

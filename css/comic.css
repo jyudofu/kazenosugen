@@ -8,7 +8,7 @@
 	display: none;
 }
 li {
-	padding: 10px;
+	padding: 10px 0;
 }
 /* ========== main ========== */
 .main {
@@ -24,18 +24,18 @@ li {
 }
 .mainLi_ul {
 	margin: auto;
-	width: 300px;
+	width: 250px;
 	font-size: 0;
 }
 .mainLi_ul > li {
 	width: 100%;
-	max-width: 300px;
+	max-width: 250px;
 	display: inline-block;
 	vertical-align: top;
 }
 .manga {
 	display: block;
-	height: 420px;
+	height: 350px;
 }
 .selectGenre {
 	display: table;
@@ -160,5 +160,14 @@ li {
 	}
 	.mainLi_ul {
 		width: 960px;
+	}
+	li {
+		padding: 10px;
+	}
+	.mainLi_ul > li {
+		max-width: 300px;
+	}
+	.manga {
+		height: 420px;
 	}
 }
