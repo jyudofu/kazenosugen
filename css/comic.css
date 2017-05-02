@@ -82,11 +82,9 @@ li {
 }
 #touhou {
 	border-color: #00a5e7;
-	opacity: 0.8;
 }
 #symphogear {
 	border-color: #d78114;
-	opacity: 0.8;
 }
 #touhou nav {
 	padding: 30px 20px;
@@ -96,6 +94,7 @@ li {
 	line-height: 40px;
 	color: #fff;
 	text-align: center;
+	opacity: 0.8;
 }
 #symphogear p {
 	padding: 40px;
