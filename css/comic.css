@@ -96,11 +96,7 @@ li {
 	text-align: center;
 	opacity: 0.8;
 }
-#symphogear p {
-	padding: 40px;
-	background-color: #000;
-	color: #fff;
-}
+/*東方*/
 .tenourokuU {
 	background-image: url(../comics/tenourokuU/tenourokuU.jpg);
 }
@@ -134,6 +130,15 @@ li {
 .hinekuremon {
 	background-image: url(../comics/hinekuremon/hinekuremon.jpg);
 }
+
+/*シンフォギア*/
+.rainyMood {
+	background-image: url(../comics/rainyMood/rainyMood.jpg);
+}
+.kusoManga001 {
+	background-image: url(../comics/kusoManga001/kusoManga001.jpg);
+}
+
 .mahounoresipi {
 	background-image: url(../comics/mahounoresipi/mahounoresipi.jpg);
 }
