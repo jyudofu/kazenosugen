@@ -1,0 +1,43 @@
+extend /_includes/_mangaLayout
+append variables
+  //- Required
+  - var pageTitle= "RAINY MOOD";
+  - var pageDescription= "";
+  - var pageKeywords= "戦姫絶唱シンフォギア, 雪音クリス, 雨";
+  //- Optional
+  - var pageOgpTitle= "RAINY MOOD";
+  - var pageOgpImage= "/assets/img/comics/rainyMood/1.png"
+  - var pageLang= "ja";
+  - var pageOgpType= "website";
+  //- Not modified
+  - var pageUrl= relativePath;
+  - var nowPage= "pageTop";
+  - var pageTop="MANGA"
+
+block comic
+    script(type="text/javascript").
+        $(document).ready(function() {
+            $(window).on('load resize', function(){
+                // 漫画ビュアープロパティ
+                var w = $(window).width();
+                var x = 480;
+                if (w <= x) {
+                    $('#viewer').mangaviewer({
+                        page: 38,	//ページ数
+                        path: '/assets/img/comics/rainyMood/',	//ディレクトリパス
+                        ext: 'png',	//拡張子
+                        page_ejection: 'right' //ページ送り
+                    });
+                } else {
+                    $('#viewer').mangaviewer({
+                        page: 38,	//ページ数
+                        path: '/assets/img/comics/rainyMood/',	//ディレクトリパス
+                        ext: 'png',	//拡張子
+                        page_ejection: 'left' //ページ送り
+                    });
+                }
+            });
+        });
+
+block content
+    #viewer

@@ -1,0 +1,215 @@
+@charset "utf-8";
+.ABOUT {
+	/* ========== header ========== */
+	.spNav_ul > li:first-child {
+		border-bottom: 1px solid #000;
+	}
+	/* ========== main ========== */
+	.main {
+		padding: 20px;
+		overflow: hidden;
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+			-o-background-size: cover;
+				background-size: cover;
+		background-position: center;
+		font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+	}
+	.mainRight {
+		display: none;
+		width: 250px;
+		height: 100%;
+		background-color: rgba(255, 255, 255, 0.5);
+	}
+	.profile {
+		background-color: #FFF;
+		-webkit-border-radius: 10px;
+				border-radius: 10px;
+	}
+	.p_name {
+		display: inline-block;
+		font-size: 25px;
+	}
+	.p_nameRuby {
+		margin-left: 30px;
+		display: inline-block;
+		font-size: 15px;
+	}
+	.profileWrapper {
+		border: 1px solid #ddd;
+		margin-bottom: 20px;
+		box-sizing: border-box;
+	}
+	.plofileIcon {
+		width: 100%;
+		height: 200px;
+		margin-right: 30px;
+		float: left;
+		background-image: url(../img/MB.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 100% 40%;
+	}
+	.profileBox {
+		float: left;
+		padding: 10px;
+	}
+	.profileTxt {
+		padding: 10px;
+		font-size: 14px;
+	}
+	.p_mainTxt {
+		margin-top: 20px;
+		padding: 0 20px;
+		font-size: 14px;
+	}
+	h2 {
+		text-align: center;
+		font-size: 20px;
+		color: #696969;
+	}
+	.more {
+		margin: 30px auto;
+		height: 40px;
+		background-color: #FFF;
+		text-align: center;
+		line-height: 40px;
+		-webkit-border-radius: 10px;
+				border-radius: 10px;
+		border: 1px solid #000;
+		font-size: 12px;
+		cursor: pointer;
+	}
+	.content {
+		padding: 20px;
+	}
+	.message {
+		margin: 20px 0;
+		text-align: center;
+	}
+	form {
+		margin: 0 auto;
+		max-width: 400px;
+		padding: 1em;
+		border: 1px solid #CCC;
+		border-radius: 1em;
+		text-align: center;
+		background-color: #FFF;
+	}
+	form input, form textarea {
+		width: 100%;
+	}
+	form .title {
+		text-align: left;
+	}
+	form li {
+		list-style-type: none;
+	}
+	form .button {
+		padding-left: 0;
+	}
+	form div + div {
+		margin-top: 1em;
+	}
+	label {
+		display: inline-block;
+		width: 90px;
+		text-align: right;
+	}
+	input, textarea {
+		font: 1em sans-serif;
+		width: 300px;
+		-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+
+		/* テキストフィールドのボーダーの外見を同一にする */
+		border: 1px solid #999;
+	}
+	input:focus, textarea:focus {
+		border-color: #000;
+	}
+	textarea {
+		vertical-align: top;
+		height: 5em;
+		resize: vertical;
+	}
+	.button {
+		padding-left: 90px;
+	}
+	button {
+		margin-left: .5em;
+	}
+	.calendar {
+		padding: 40px 20px;
+		background-color: #ddd;
+	}
+	.circle, .doujin {
+		margin: 0 auto;
+		max-width: 650px;
+	}
+	.doujin {
+		padding-top: 40px;
+	}
+
+	.history {
+		border-left: 2px solid #fff;
+	}
+	.history li {
+		position: relative;
+		margin-top: 15px;
+		margin-left: 15px;
+		padding: 5px 0;
+		background-color: #fff;
+		border-radius: 5px;
+	}
+	.history li:before {
+		position: absolute;
+		top: 10px;
+		left: -7px;
+		content: "";
+		border-right: 12px solid #fff;
+		border-top: 12px solid transparent;
+		border-bottom: 12px solid transparent;
+	}
+	.history li:after {
+		position: absolute;
+		content: "";
+		top: 14px;
+		left: -24px;
+		width: 10px;
+		height: 10px;
+		background-color: #ff8e8e;
+		border: 3px solid #fff;
+		border-radius: 15px;
+		vertical-align: bottom;
+	}
+
+	.history  h3 {
+		position: relative;
+		padding-left: 15px;
+	}
+
+
+	.history  p {
+		margin: 0 20px;
+		font-size: 12px;
+	}
+	#output987356 a {
+		text-align: center;
+		color: #696969;
+		font-size: 5px;
+	}
+	.days {
+		margin-top: 5px;
+		border-bottom: 1px solid #ddd;
+	}
+	/* レスポンシブの設定 */
+	@media all and (min-width: 768px) {
+		.mainRight {
+			display: block;
+		}
+		.twitter-follow-button {
+			margin-left: 50px;
+		}
+	}
+}

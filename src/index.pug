@@ -1,0 +1,30 @@
+extend /_includes/_layout
+append variables
+  //- Required
+  - var pageTitle= "TOP";
+  - var pageDescription= site.description;
+  - var pageKeywords= site.keywords;
+  //- Optional
+  - var pageOgpTitle= "TOP";
+  - var pageOgpImage= site.ogpImage
+  - var pageLang= "ja";
+  - var pageOgpType= "website";
+  //- Not modified
+  - var pageUrl= relativePath;
+  - var nowPage= "pageTop";
+  - var pageTop="TOP"
+
+block content
+  // contents
+  .main.bgsw
+  // pickUp
+  .pickUp
+    .pickUpTxt PICKUP!
+    a(href="/comic/rainyMood/" target="brank")
+      .pickUp_inner
+      img(src="assets/img/comics/rainyMood/rainyMood.png" alt="RAINY MOOD").pickUp_thum
+      p.pickUpNew 公開開始!!
+    a(href="https://www.melonbooks.co.jp/detail/detail.php?product_id=218430" target="brank")
+      .pickUp_inner
+      img(src="assets/img/comics/tenourokuTenKitou/tenourokuTenKitou.png" alt="東方天王禄 天 -祈祷編-").pickUp_thum
+      p.pickUpNew 例大祭新刊!!

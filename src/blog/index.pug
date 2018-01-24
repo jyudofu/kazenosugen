@@ -1,0 +1,19 @@
+extend /_includes/_layout
+append variables
+  //- Required
+  - var pageTitle= "BLOG";
+  - var pageDescription= site.description;
+  - var pageKeywords= site.keywords;
+  //- Optional
+  - var pageOgpTitle= "BLOG";
+  - var pageOgpImage= site.ogpImage
+  - var pageLang= "ja";
+  - var pageOgpType= "website";
+  //- Not modified
+  - var pageUrl= relativePath;
+  - var nowPage= "pageTop";
+  - var pageTop="BLOG"
+
+block content
+    .main
+        iframe(src="http://jdfkazenosougen.blog.fc2.com/" frameborder="0").frame

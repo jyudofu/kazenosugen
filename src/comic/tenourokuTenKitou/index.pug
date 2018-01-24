@@ -1,0 +1,46 @@
+extend /_includes/_mangaLayout
+append variables
+  //- Required
+  - var pageTitle= "東方天王禄 天 -祈祷編-";
+  - var pageDescription= "";
+  - var pageKeywords= "";
+  //- Optional
+  - var pageOgpTitle= "東方天王禄 天 -祈祷編-";
+  - var pageOgpImage= "/assets/img/comics/tenourokuTenKitou/1.png"
+  - var pageLang= "ja";
+  - var pageOgpType= "website";
+  //- Not modified
+  - var pageUrl= relativePath;
+  - var nowPage= "pageTop";
+  - var pageTop="MANGA"
+
+block comic
+    script(type="text/javascript").
+        $(document).ready(function() {
+            $(window).on('load resize', function(){
+                // 漫画ビュアープロパティ
+                var w = $(window).width();
+                var x = 480;
+                if (w <= x) {
+                    $('#viewer').mangaviewer({
+                        page: 72,	//ページ数
+                        path: '/assets/img/comics/tenourokuTenKitou/',	//ディレクトリパス
+                        ext: 'png',	//拡張子
+                        page_ejection: 'right' //ページ送り
+                    });
+                } else {
+                    $('#viewer').mangaviewer({
+                        page: 72,	//ページ数
+                        path: '/assets/img/comics/tenourokuTenKitou/',	//ディレクトリパス
+                        ext: 'png',	//拡張子
+                        page_ejection: 'left' //ページ送り
+                    });
+                }
+            });
+        });
+
+block content
+    #viewer
+
+block next
+    .next: a(href="/comic/tenourokuU/").nextTxt 有

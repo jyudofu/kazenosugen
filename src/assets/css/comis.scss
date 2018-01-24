@@ -1,0 +1,177 @@
+.COMIC {
+    /* ========== header ========== */
+    .spNav_ul > li:first-child {
+        border-bottom: 1px solid #000;
+    }
+    .hide {
+        display: none;
+    }
+    li {
+        padding: 10px 0;
+    }
+    /* ========== main ========== */
+    .main {
+        overflow: hidden;
+        padding: 10px;
+        font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+    }
+    .mainRight {
+        display: none;
+        width: 250px;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+    .mainLi_ul {
+        margin: auto;
+        width: 250px;
+        font-size: 0;
+    }
+    .mainLi_ul > li {
+        width: 100%;
+        max-width: 250px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .manga {
+        display: block;
+        height: 350px;
+    }
+    .selectGenre {
+        display: table;
+        width: 100%;
+        font-size: 14px;
+    }
+    .selectGenrebox {
+        display: table-cell;
+        width: 50%;
+        height: 400px;
+        line-height: 400px;
+        text-align: center;
+        cursor: pointer;
+        transition-duration: 1.0s;
+        color: #fff;
+        opacity: 0.5;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+
+    }
+    .selectGenrebox:hover {
+        opacity: 1;
+    }
+    .selected {
+        opacity: 1;
+    }
+    .touhou.firstSelect {
+        background:url(../img/illust/summerdance.png);
+        background-size: cover;
+        background-position: center;
+    }
+    .symphogear.firstSelect{
+        background:url(../img/illust/gekisou.png);
+        background-size: cover;
+        background-position: center;
+    }
+    .touhou, #touhou h2 {
+        background:#00a5e7;
+    }
+    .symphogear, #symphogear h2{
+        background: #d78114;
+    }
+    #touhou, #symphogear {
+        border: 1px solid;
+    }
+    #touhou {
+        border-color: #00a5e7;
+    }
+    #symphogear {
+        border-color: #d78114;
+    }
+    #touhou nav {
+        padding: 30px 20px;
+    }
+    #touhou h2, #symphogear h2 {
+        height: 40px;
+        line-height: 40px;
+        color: #fff;
+        text-align: center;
+        opacity: 0.8;
+    }
+    /*東方*/
+    .tenourokuU {
+        background-image: url(../comics/tenourokuU/tenourokuU.jpg);
+    }
+    .tenourokuTenKitou {
+        background-image: url(../comics/tenourokuTenKitou/tenourokuTenKitou.png);
+    }
+    .kyoutengu0 {
+        background-image: url(../comics/kyoutengu0/kyoutengu0.jpg);
+    }
+    .kyoutengu1 {
+        background-image: url(../comics/kyoutengu1/kyoutengu1.jpg);
+    }
+    .kyoutengu2 {
+        background-image: url(../comics/kyoutengu2/kyoutengu2.jpg);
+    }
+    .kyoutengu3 {
+        background-image: url(../comics/kyoutengu3/kyoutengu3.jpg);
+    }
+    .kyoutengu4 {
+        background-image: url(../comics/kyoutengu4/kyoutengu4.jpg);
+    }
+    .kyoutengu5 {
+        background-image: url(../comics/kyoutengu5/kyoutengu5.jpg);
+    }
+    .kyoutenguLast {
+        background-image: url(../comics/kyoutenguLast/kyoutenguLast.jpg);
+    }
+    .kimikimi {
+        background-image: url(../comics/kimikimi/kimikimi.jpg);
+    }
+    .hinekuremon {
+        background-image: url(../comics/hinekuremon/hinekuremon.jpg);
+    }
+
+    /*シンフォギア*/
+    .rainyMood {
+        background-image: url(../comics/rainyMood/rainyMood.jpg);
+    }
+    .kusoManga001 {
+        background-image: url(../comics/kusoManga001/kusoManga001.jpg);
+    }
+
+    .mahounoresipi {
+        background-image: url(../comics/mahounoresipi/mahounoresipi.jpg);
+    }
+    .mangainner {
+        -webkit-background-size: cover;
+            -o-background-size: cover;
+                background-size: cover;
+    }
+    .mangainner:hover {
+        background-color: #000;
+        opacity: 0.5;
+    }
+    .mangaTitle {
+        margin-top: 10px;
+        font-size: 18px;
+        line-height: 1.2;
+        text-align: center;
+    }
+    /* レスポンシブの設定 */
+    @media all and (min-width: 768px) {
+        .mainRight {
+            display: block;
+        }
+        .mainLi_ul {
+            width: 960px;
+        }
+        li {
+            padding: 10px;
+        }
+        .mainLi_ul > li {
+            max-width: 300px;
+        }
+        .manga {
+            height: 420px;
+        }
+    }
+}
