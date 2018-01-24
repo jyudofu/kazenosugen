@@ -24,7 +24,7 @@ var src = {
   'json': 'src/_data/',
   'sass': 'src/**/*.scss',
   'js': 'src/**/*.js',
-  'img': 'src/**/*.png',
+  'img': 'src/**/*.{jpg,png}',
 };
 
 /**
