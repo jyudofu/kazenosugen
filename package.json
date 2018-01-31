@@ -7,6 +7,7 @@
   "description": "GulpでPugを実行するためのテスト環境です。",
   "main": "index.js",
   "scripts": {
+    "dev": "./node_modules/.bin/gulp --max_old_space_size=8192 dev",
     "start": "gulp"
   },
   "keywords": [
