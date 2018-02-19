@@ -1,7 +1,7 @@
 {
   "name": "風の草原",
-  "description": "サイトの概要",
-  "keywords": "サイトのキーワード1, サイトのキーワード2",
-  "rootUrl": "http://example.com/",
-  "ogpImage": "http://example.com/images/og-image.jpg"
+  "description": "「東方project」「戦姫絶唱シンフォギア」をメインに活動する二次創作サークル「風の草原」、樹土風の個人サイトです。作成したイラスト、漫画等を公開しております。",
+  "keywords": "風の草原, 樹土風, 樹土, 東方, 東方project, 戦姫絶唱シンフォギア, シンフォギア, 東方狂天狗, 東方天王禄, 天狗, マフラー天子, 天王禄, 狂天狗",
+  "rootUrl": "http://kazenosougen.jp/",
+  "ogpImage": "http://kazenosougen.jp/assets/img/summerdance-top.png"
 }

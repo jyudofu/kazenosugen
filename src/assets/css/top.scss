@@ -15,41 +15,16 @@ body {
 				background-size: cover;
 		background-position: center;
 		min-height: 450px;
-		height: 76%;
-	}
-	.mainRight {
-		display: none;
-		width: 250px;
-		height: 100%;
-		min-height: 450px;
-		background-color: rgba(255, 255, 255, 0.5);
 	}
 	.side {
 		padding: 45px 0 0 45px;
 		width: 120px;
 	}
-	.side_ul {
-	}
-	.side_ul > li {
-		margin-top: 20px;
-		height: 26px;
-		border-bottom: 1px solid #000;
-		-webkit-box-sizing: border-box;
-	}
-	.side_ul > li:first-child {
-		margin-top: 0;
-		border-bottom: none;
-	}
-	.side_ul > li:hover {
-		border-bottom: 1px solid #EB7A77;
-	}
-	.side_ul > li:first-child:hover {
-		border-bottom: none;
-	}
 	.pickUp {
+		display: none;
 		position: absolute;
-		bottom: 20%;
-		right: 10%;
+		bottom: 5%;
+		right: 5%;
 		background-color: #fff;
 		font-size: 0;
 	}
@@ -85,7 +60,13 @@ body {
 
 	/* レスポンシブの設定 */
 	@media all and (min-width: 768px) {
+		.main {
+			min-height: 650px;
+		}
 		.mainRight {
+			display: block;
+		}
+		.pickUp {
 			display: block;
 		}
 	}

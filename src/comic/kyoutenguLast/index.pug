@@ -1,12 +1,12 @@
 extend /_includes/_mangaLayout
 append variables
   //- Required
-  - var pageTitle= "RAINY MOOD";
-  - var pageDescription= "雨の日、それは少しだけズレた日常。雪音クリスと雨の日のお話。";
-  - var pageKeywords= "戦姫絶唱シンフォギア, シンフォギア, 雪音クリス, 立花響, 小日向未来, 風鳴翼, 暁切歌, 月読調, 雨, 漫画, 同人誌";
+  - var pageTitle= "東方狂天狗 終～the End～";
+  - var pageDescription= "";
+  - var pageKeywords= "東方Project, 東方, 東方狂天狗, 狂天狗, 射命丸文, 博麗霊夢, 霧雨魔理沙, 魂魄妖夢, 東風谷早苗, 十六夜咲夜, 漫画, 同人誌";
   //- Optional
-  - var pageOgpTitle= "RAINY MOOD";
-  - var pageOgpImage= "/assets/img/comics/rainyMood/1.png"
+  - var pageOgpTitle= "東方狂天狗 終～the End～";
+  - var pageOgpImage= "/assets/img/comics/kyoutenguLast/1.jpg"
   - var pageLang= "ja";
   - var pageOgpType= "website";
   //- Not modified
@@ -23,16 +23,16 @@ block comic
                 var x = 480;
                 if (w <= x) {
                     $('#viewer').mangaviewer({
-                        page: 38,	//ページ数
-                        path: '/assets/img/comics/rainyMood/',	//ディレクトリパス
-                        ext: 'png',	//拡張子
+                        page: 59,	//ページ数
+                        path: '/assets/img/comics/kyoutenguLast/',	//ディレクトリパス
+                        ext: 'jpg',	//拡張子
                         page_ejection: 'right' //ページ送り
                     });
                 } else {
                     $('#viewer').mangaviewer({
-                        page: 38,	//ページ数
-                        path: '/assets/img/comics/rainyMood/',	//ディレクトリパス
-                        ext: 'png',	//拡張子
+                        page: 59,	//ページ数
+                        path: '/assets/img/comics/kyoutenguLast/',	//ディレクトリパス
+                        ext: 'jpg',	//拡張子
                         page_ejection: 'left' //ページ送り
                     });
                 }
@@ -41,3 +41,6 @@ block comic
 
 block content
     #viewer
+
+block next
+    .back: a(href="/comic/kyoutengu5/").nextTxt 前へ

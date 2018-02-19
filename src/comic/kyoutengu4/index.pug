@@ -1,0 +1,47 @@
+extend /_includes/_mangaLayout
+append variables
+  //- Required
+  - var pageTitle= "東方狂天狗 肆～Broody and Lost Sun～";
+  - var pageDescription= "";
+  - var pageKeywords= "東方Project, 東方, 東方狂天狗, 狂天狗, 射命丸文, レミリア・スカーレット, フランドール・スカーレット, 火焔猫燐, 霊烏路空, 漫画, 同人誌";
+  //- Optional
+  - var pageOgpTitle= "東方狂天狗 肆～Broody and Lost Sun～";
+  - var pageOgpImage= "/assets/img/comics/kyoutengu4/1.jpg"
+  - var pageLang= "ja";
+  - var pageOgpType= "website";
+  //- Not modified
+  - var pageUrl= relativePath;
+  - var nowPage= "pageTop";
+  - var pageTop="MANGA"
+
+block comic
+    script(type="text/javascript").
+        $(document).ready(function() {
+            $(window).on('load resize', function(){
+                // 漫画ビュアープロパティ
+                var w = $(window).width();
+                var x = 480;
+                if (w <= x) {
+                    $('#viewer').mangaviewer({
+                        page: 43,	//ページ数
+                        path: '/assets/img/comics/kyoutengu4/',	//ディレクトリパス
+                        ext: 'jpg',	//拡張子
+                        page_ejection: 'right' //ページ送り
+                    });
+                } else {
+                    $('#viewer').mangaviewer({
+                        page: 43,	//ページ数
+                        path: '/assets/img/comics/kyoutengu4/',	//ディレクトリパス
+                        ext: 'jpg',	//拡張子
+                        page_ejection: 'left' //ページ送り
+                    });
+                }
+            });
+        });
+
+block content
+    #viewer
+
+block next
+    .back: a(href="/comic/kyoutengu3/").nextTxt 前へ
+    .next: a(href="/comic/kyoutengu5/").nextTxt 次へ
