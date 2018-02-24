@@ -3,13 +3,13 @@ $(function(){
 		var hairetu = [];
 		for(var i = 0; i < $(".buy_itemu_menu").length; i++){
 			
+			var select_name = $("select").eq(i).attr("name");
 			var item_name = $(".buy_itemu_menu").eq(i).data("name");
 			var item_price = $(".buy_itemu_menu").eq(i).data("price");
 			var item_select = $(".buy_itemu_menu").eq(i).nextAll(".select_inner").find("option:selected").data("num");
 			var item_total = item_price * item_select
-			console.log(item_name)
 
-			hairetu.push({item:item_name, val:item_select, price: item_total});
+			hairetu.push({name:select_name, item:item_name, val:item_select, price: item_total});
 		}
 		console.log(hairetu)
 		// 全体合計値
@@ -114,6 +114,73 @@ $(function(){
 			}
 			priceTotal += hairetu[j].price;
 			selectTotal += hairetu[j].val;
+			if (selectTotal > 0) {
+				$(".listButton").removeClass("disable")
+			} else {
+				$(".listButton").addClass("disable")				
+			}
+			if (hairetu[j].val >= 1) {
+				var thisName = "." + hairetu[j].name;
+				$(thisName).removeClass('hide')
+				$(thisName).addClass('show')
+				$(thisName + " .num").html(hairetu[j].val + "個")
+				if(hairetu[j].name === "character_t_hibiki" || hairetu[j].name === "character_t_tsubasa" || hairetu[j].name === "character_t_chris" || hairetu[j].name === "character_t_maria" || hairetu[j].name === "character_t_sirabe" || hairetu[j].name === "character_t_kirika" || hairetu[j].name === "character_t_miku" || hairetu[j].name === "character_t_san" || hairetu[j].name === "character_t_kari" || hairetu[j].name === "character_t_pure") {
+					$(".character_t").removeClass('hide')
+					$(".character_t").addClass('show')
+				}
+				if (hairetu[j].name === "live_t_S" || hairetu[j].name === "live_t_M" || hairetu[j].name === "live_t_L" || hairetu[j].name === "live_t_XL") {
+					$(".live_t").removeClass('hide')
+					$(".live_t").addClass('show')		
+				}
+				if (hairetu[j].name === "live_parker_M" || hairetu[j].name === "live_parker_L") {
+					$(".live_parker").removeClass('hide')
+					$(".live_parker").addClass('show')		
+				}
+				if (hairetu[j].name === "muffler_towel") {
+					$(".muffler_towel").removeClass('hide')
+					$(".muffler_towel").addClass('show')		
+				}
+				if (hairetu[j].name === "toto_bag") {
+					$(".toto_bag").removeClass('hide')
+					$(".toto_bag").addClass('show')		
+				}
+				if(hairetu[j].name === "half_band_hibiki" || hairetu[j].name === "half_band_tsubasa" || hairetu[j].name === "half_band_chris" || hairetu[j].name === "half_band_maria" || hairetu[j].name === "half_band_sirabe" || hairetu[j].name === "half_band_kirika" || hairetu[j].name === "half_band_miku" || hairetu[j].name === "half_band_gold") {
+					$(".half_band").removeClass('hide')
+					$(".half_band").addClass('show')
+				}
+				if(hairetu[j].name === "rubber_key_holder_hibiki" || hairetu[j].name === "rubber_key_holder_tsubasa" || hairetu[j].name === "rubber_key_holder_chris" || hairetu[j].name === "rubber_key_holder_maria" || hairetu[j].name === "rubber_key_holder_sirabe" || hairetu[j].name === "rubber_key_holder_kirika" || hairetu[j].name === "rubber_key_holder_miku" || hairetu[j].name === "rubber_key_holder_san" || hairetu[j].name === "rubber_key_holder_kari" || hairetu[j].name === "rubber_key_holder_pure") {
+					$(".rubber_key_holder").removeClass('hide')
+					$(".rubber_key_holder").addClass('show')
+				}
+				if (hairetu[j].name === "clear_file") {
+					$(".clear_file").removeClass('hide')
+					$(".clear_file").addClass('show')		
+				}
+				if (hairetu[j].name === "pen_wright") {
+					$(".pen_wright").removeClass('hide')
+					$(".pen_wright").addClass('show')		
+				}
+				if (hairetu[j].name === "hinaarare") {
+					$(".hinaarare").removeClass('hide')
+					$(".hinaarare").addClass('show')		
+				}
+				if (hairetu[j].name === "mobile_battery") {
+					$(".mobile_battery").removeClass('hide')
+					$(".mobile_battery").addClass('show')		
+				}
+				$(".check_list .character_t .total .num").html("￥" + character_t_price);
+				$(".check_list .live_t .total .num").html("￥" + live_t_price);
+				$(".check_list .live_parker .total .num").html("￥" + live_parker_price);
+				$(".check_list .muffler_towel .total .num").html("￥" + muffler_towel_price);
+				$(".check_list .toto_bag .total .num").html("￥" + toto_bag_price);
+				$(".check_list .half_band .total .num").html("￥" + half_band_price);
+				$(".check_list .rubber_key_holder .total .num").html("￥" + rubber_key_holder_price);
+				$(".check_list .clear_file .total .num").html("￥" + clear_file_price);
+				$(".check_list .hinaarare .total .num").html("￥" + hinaarare_price);
+				$(".check_list .play_button .total .num").html("￥" + play_button_price);
+				$(".check_list .mobile_battery .total .num").html("￥" + mobile_battery_price);
+				console.log(hairetu[j].val)
+			}
 		}
 		console.log(character_t_price)	
 		//　キャラクターTシャツ
@@ -149,5 +216,13 @@ $(function(){
 		$(".total_all_val .num").html(selectTotal + "個");
 		$(".total_all_price .num").html(priceTotal + "円");
 	
+	});
+	$(".listButton").click(function() {
+		$(".wrapper").fadeOut(500)
+		$(".wrapper_list").fadeIn(500)
+	});
+	$(".formButton").click(function() {
+		$(".wrapper").fadeIn(500)
+		$(".wrapper_list").fadeOut(500)
 	});
 });

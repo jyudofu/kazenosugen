@@ -1,6 +1,16 @@
 .another {
     select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background: none transparent;
         outline: 0;
+    }
+    .show {
+        display: table;
+    }
+    .hide {
+        display: none;
     }
     .wrapper {
         padding: 10px;
@@ -67,7 +77,6 @@
                         font-size: 12px;
                     }
                     .select_inner {
-                        padding: 5px 0;
                         border: 1px solid #ddd;
                         border-radius: 5px;
                         overflow: hidden;
@@ -75,6 +84,7 @@
                         select {
                             width: 130%;
                             border: 0;
+                            padding: 5px 10px;
                         }
                     }
                 }
@@ -111,6 +121,7 @@
             border-radius: 5px;
             box-sizing: border-box;
             font-size: 20px;
+            background-color: #fff;
             p {
                 font-weight: bold;
                 display: table-cell;
@@ -147,6 +158,71 @@
         }
         &.pavaria {
             background-color: #ffd700;
+        }
+    }
+    .wrapper_list {
+        padding: 10px;
+        background-color: #ddd;
+    }
+    .check_list {
+        width: 100%;
+        display: table;
+        border: 1px solid #ddd;
+        border-bottom: 0;
+        background-color: #fff;
+        th {
+            padding-left: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        tr {
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            text-align: right;
+        }
+        .list, .total {
+            display: table-cell;
+        }
+        .list {
+            width: 70%;
+            border-right: 1px solid #ddd;
+            padding: 0 5px;
+            & > div {
+                width: 100%;
+            }
+            p, .character_color {
+                margin-right: 5px;
+                display: inline-block;
+                font-size: 12px;
+            }
+        }
+        .total {
+            width: 30%;
+            .num {
+                padding-right: 5px;
+                font-size: 12px;
+            }
+        }
+    }
+    .list_button_inner {
+        margin: 0 auto;
+        margin-top: 10px;
+        width: 300px;
+        background-color: #fff;
+        border-radius: 5px;
+        .listButton, .formButton {
+            width: 300px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            background-color: #404040;
+            border-radius: 5px;
+            border-bottom: 5px solid #000;
+            color: #fff;
+            font-weight: bold;
+            &.disable {
+                opacity: 0.6;
+            }
         }
     }
 }
