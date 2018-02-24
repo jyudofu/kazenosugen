@@ -1,0 +1,821 @@
+extend /_includes/_anotherLayout
+append variables
+  //- Required
+  - var pageTitle= "シンフォギアライブ2018物販計算";
+  - var pageDescription= "シンフォギアライブ2018の物販の計算をすることが出来ます。公式とは一切関係ありません。";
+  - var pageKeywords= "戦姫絶唱シンフォギア, シンフォギア, シンフォギアライブ, シンフォギアライブ2018";
+  //- Optional
+  - var pageOgpTitle= "シンフォギアライブ2018物販計算";
+  - var pageOgpImage= ""
+  - var pageLang= "ja";
+  - var pageOgpType= "website";
+  //- Not modified
+  - var pageUrl= relativePath;
+  - var pageTop="another"
+
+block content
+  .wrapper
+    h1 シンフォギアライブ2018物販計算
+    .information
+      p ・公式とは一切関係関係ありません。
+      p ・ブラウザに送信をしていないので、リロードするとデータは初期化されます。
+    .sns_button
+      .twitter
+        a(href="https://twitter.com/share" data-hashtags="シンフォギアライブ2018").twitter-share-button Tweet
+        script.
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    .contents
+      .contents_inner
+        form(class="form-horizon" method="post")
+          //- キャラクターTシャツ
+          h3 キャラクターTシャツ
+          div(class="contents_box character_t")
+            .item_box
+              .item_val
+                p 各￥3,500 ×
+                p.num 0個
+              .form_box
+                  .character_color.hibiki
+                  p(class="buy_itemu_menu" data-price="3500" data-name="character_t") 響
+                  p.kakeru ×
+                  .select_inner
+                    select(name="character_t_hibiki")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.tsubasa
+                p(class="buy_itemu_menu" data-price="3500" data-name="character_t") 翼
+                p.kakeru ×
+                .select_inner
+                  select(name="character_t_tsubasa")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.chris
+                p(class="buy_itemu_menu" data-price="3500" data-name="character_t") クリス
+                p.kakeru ×
+                .select_inner
+                  select(name="character_t_chris")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.maria
+                p(class="buy_itemu_menu" data-price="3500" data-name="character_t") マリア
+                p.kakeru ×
+                .select_inner
+                  select(name="character_t_maria")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.sirabe
+                p(class="buy_itemu_menu" data-price="3500" data-name="character_t") 調
+                p.kakeru ×
+                .select_inner
+                  select(name="character_t_sirabe")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.kirika
+                p(class="buy_itemu_menu" data-price="3500" data-name="character_t") 切歌
+                p.kakeru ×
+                .select_inner
+                  select(name="character_t_kirika")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.miku
+                p(class="buy_itemu_menu" data-price="3500" data-name="character_t") 未来
+                p.kakeru ×
+                .select_inner
+                  select(name="character_t_miku")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.pavaria
+                p(class="buy_itemu_menu" data-price="3500" data-name="character_t") サンジェルマン
+                p.kakeru ×
+                .select_inner
+                  select(name="character_t_san")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.pavaria
+                p(class="buy_itemu_menu" data-price="3500" data-name="character_t") カリオストロ
+                p.kakeru ×
+                .select_inner
+                  select(name="character_t_kari")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.pavaria
+                p(class="buy_itemu_menu" data-price="3500" data-name="character_t") プレラーティ
+                p.kakeru ×
+                .select_inner
+                  select(name="character_t_pure")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+            .item_total
+              p.num ￥0
+
+          //- ライブTシャツ
+          h3 ライブTシャツ
+          div(class="contents_box live_t")
+            .item_box
+              .item_val
+                p 各￥3,000 ×
+                p.num 0個
+              .form_box
+                  p(class="buy_itemu_menu" data-price="3000" data-name="live_t") Sサイズ
+                  p.kakeru ×
+                  .select_inner
+                    select(name="live_t_S")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+              .form_box
+                  p(class="buy_itemu_menu" data-price="3000" data-name="live_t") Mサイズ
+                  p.kakeru ×
+                  .select_inner
+                    select(name="live_t_M")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+              .form_box
+                  p(class="buy_itemu_menu" data-price="3000" data-name="live_t") Lサイズ
+                  p.kakeru ×
+                  .select_inner
+                    select(name="live_t_L")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+              .form_box
+                  p(class="buy_itemu_menu" data-price="3000" data-name="live_t") XLサイズ
+                  p.kakeru ×
+                  .select_inner
+                    select(name="live_t_XL")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+            .item_total
+              p.num ￥0
+
+          //- ライブパーカー
+          h3 ライブパーカー
+          div(class="contents_box live_parker")
+            .item_box
+              .item_val
+                p 各￥6,000 ×
+                p.num 0個
+              .form_box
+                  p(class="buy_itemu_menu" data-price="6000" data-name="live_parker") Mサイズ
+                  p.kakeru ×
+                  .select_inner
+                    select(name="live_parker_M")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+              .form_box
+                  p(class="buy_itemu_menu" data-price="6000" data-name="live_parker") Lサイズ
+                  p.kakeru ×
+                  .select_inner
+                    select(name="live_parker_L")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+            .item_total
+              p.num ￥0
+
+          //- マフラータオル
+          h3 マフラータオル
+          div(class="contents_box muffler_towel")
+            .item_box
+              .form_box
+                  p(class="buy_itemu_menu" data-price="2000" data-name="muffler_towel") ￥2,000
+                  p.kakeru ×
+                  .select_inner
+                    select(name="muffler_towel")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+            .item_total
+              p.num ￥0
+
+          //- トートバッグ
+          h3 トートバッグ
+          div(class="contents_box toto_bag")
+            .item_box
+              .form_box
+                  p(class="buy_itemu_menu" data-price="2500" data-name="toto_bag") ￥2,500
+                  p.kakeru ×
+                  .select_inner
+                    select(name="toto_bag")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+            .item_total
+              p.num ￥0
+
+          //- ハーフリストバンド
+          h3 ハーフリストバンド
+          div(class="contents_box half_band")
+            .item_box
+              .item_val
+                p 各￥500 ×
+                p.num 0個
+              .form_box
+                  .character_color.hibiki
+                  p(class="buy_itemu_menu" data-price="500" data-name="half_band") オレンジ
+                  p.kakeru ×
+                  .select_inner
+                    select(name="half_band_hibiki")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.tsubasa
+                p(class="buy_itemu_menu" data-price="500" data-name="half_band") ブルー
+                p.kakeru ×
+                .select_inner
+                  select(name="half_band_tsubasa")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.chris
+                p(class="buy_itemu_menu" data-price="500" data-name="half_band") レッド
+                p.kakeru ×
+                .select_inner
+                  select(name="half_band_chris")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.maria
+                p(class="buy_itemu_menu" data-price="500" data-name="half_band") グレー
+                p.kakeru ×
+                .select_inner
+                  select(name="half_band_maria")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.sirabe
+                p(class="buy_itemu_menu" data-price="500" data-name="half_band") ピンク
+                p.kakeru ×
+                .select_inner
+                  select(name="half_band_sirabe")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.kirika
+                p(class="buy_itemu_menu" data-price="500" data-name="half_band") グリーン
+                p.kakeru ×
+                .select_inner
+                  select(name="half_band_kirika")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.miku
+                p(class="buy_itemu_menu" data-price="500" data-name="half_band") パープル
+                p.kakeru ×
+                .select_inner
+                  select(name="half_band_miku")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.pavaria
+                p(class="buy_itemu_menu" data-price="500" data-name="half_band") ゴールド
+                p.kakeru ×
+                .select_inner
+                  select(name="half_band_gold")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+            .item_total
+              p.num ￥0
+
+          //- ラバーキーホルダー
+          h3 ラバーキーホルダー
+          div(class="contents_box rubber_key_holder")
+            .item_box
+              .item_val
+                p 各￥700 ×
+                p.num 0個
+              .form_box
+                  .character_color.hibiki
+                  p(class="buy_itemu_menu" data-price="700" data-name="rubber_key_holder") 響
+                  p.kakeru ×
+                  .select_inner
+                    select(name="rubber_key_holder_hibiki")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.tsubasa
+                p(class="buy_itemu_menu" data-price="700" data-name="rubber_key_holder") 翼
+                p.kakeru ×
+                .select_inner
+                  select(name="rubber_key_holder_tsubasa")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.chris
+                p(class="buy_itemu_menu" data-price="700" data-name="rubber_key_holder") クリス
+                p.kakeru ×
+                .select_inner
+                  select(name="rubber_key_holder_chris")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.maria
+                p(class="buy_itemu_menu" data-price="700" data-name="rubber_key_holder") マリア
+                p.kakeru ×
+                .select_inner
+                  select(name="rubber_key_holder_maria")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.sirabe
+                p(class="buy_itemu_menu" data-price="700" data-name="rubber_key_holder") 調
+                p.kakeru ×
+                .select_inner
+                  select(name="rubber_key_holder_sirabe")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.kirika
+                p(class="buy_itemu_menu" data-price="700" data-name="rubber_key_holder") 切歌
+                p.kakeru ×
+                .select_inner
+                  select(name="rubber_key_holder_kirika")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.miku
+                p(class="buy_itemu_menu" data-price="700" data-name="rubber_key_holder") 未来
+                p.kakeru ×
+                .select_inner
+                  select(name="rubber_key_holder_miku")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.pavaria
+                p(class="buy_itemu_menu" data-price="700" data-name="rubber_key_holder") サンジェルマン
+                p.kakeru ×
+                .select_inner
+                  select(name="rubber_key_holder_san")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.pavaria
+                p(class="buy_itemu_menu" data-price="700" data-name="rubber_key_holder") カリオストロ
+                p.kakeru ×
+                .select_inner
+                  select(name="rubber_key_holder_kari")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+              .form_box
+                .character_color.pavaria
+                p(class="buy_itemu_menu" data-price="700" data-name="rubber_key_holder") プレラーティ
+                p.kakeru ×
+                .select_inner
+                  select(name="rubber_key_holder_pure")
+                    option(value="0個" data-num="0" selected) 0個
+                    option(value="1個" data-num="1") 1個
+                    option(value="2個" data-num="2") 2個
+                    option(value="3個" data-num="3") 3個
+                    option(value="4個" data-num="4") 4個
+                    option(value="5個" data-num="5") 5個
+                    option(value="6個" data-num="6") 6個
+                    option(value="7個" data-num="7") 7個
+                    option(value="8個" data-num="8") 8個
+                    option(value="9個" data-num="9") 9個
+                    option(value="10個" data-num="10") 10個
+            .item_total
+              p.num ￥0
+
+          //- クリアファイルセット
+          h3 クリアファイルセット
+          div(class="contents_box clear_file")
+            .item_box
+              .form_box
+                  p(class="buy_itemu_menu" data-price="1500" data-name="clear_file") ￥1,500
+                  p.kakeru ×
+                  .select_inner
+                    select(name="clear_file")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+            .item_total
+              p.num ￥0
+
+          //- ペンライト
+          h3 ペンライト
+          div(class="contents_box pen_wright")
+            .item_box
+              .form_box
+                  p(class="buy_itemu_menu" data-price="3500" data-name="pen_wright") ￥3,500
+                  p.kakeru ×
+                  .select_inner
+                    select(name="pen_wright")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+            .item_total
+              p.num ￥0
+
+          //- ひなシンフォギあられ
+          h3 ひなシンフォギあられ
+          div(class="contents_box hinaarare")
+            .item_box
+              .form_box
+                  p(class="buy_itemu_menu" data-price="700" data-name="hinaarare") ￥700
+                  p.kakeru ×
+                  .select_inner
+                    select(name="hinaarare")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+            .item_total
+              p.num ￥0
+
+          //- PLAYBUTTON
+          h3 PLAYBUTTON
+          div(class="contents_box play_button")
+            .item_box
+              .form_box
+                  p(class="buy_itemu_menu" data-price="3000" data-name="play_button") ￥3,000
+                  p.kakeru ×
+                  .select_inner
+                    select(name="play_button")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+            .item_total
+              p.num ￥0
+
+          //- モバイルバッテリー
+          h3 モバイルバッテリー
+          div(class="contents_box mobile_battery")
+            .item_box
+              .form_box
+                  p(class="buy_itemu_menu" data-price="6500" data-name="mobile_battery") ￥6,500
+                  p.kakeru ×
+                  .select_inner
+                    select(name="mobile_battery")
+                      option(value="0個" data-num="0" selected) 0個
+                      option(value="1個" data-num="1") 1個
+                      option(value="2個" data-num="2") 2個
+                      option(value="3個" data-num="3") 3個
+                      option(value="4個" data-num="4") 4個
+                      option(value="5個" data-num="5") 5個
+                      option(value="6個" data-num="6") 6個
+                      option(value="7個" data-num="7") 7個
+                      option(value="8個" data-num="8") 8個
+                      option(value="9個" data-num="9") 9個
+                      option(value="10個" data-num="10") 10個
+            .item_total
+              p.num ￥0
+
+        .total
+          .total_all_val
+            p.intro ※商品は全て税込み価格です
+            p 合計点数
+            p.num 0個
+          .total_all_price
+            p 合計
+            p.num 0円
+

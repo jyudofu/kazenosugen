@@ -1,0 +1,152 @@
+.another {
+    select {
+        outline: 0;
+    }
+    .wrapper {
+        padding: 10px;
+        background-color: #ff8c00;
+        color: #fff;
+        h1 {
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .information {
+            margin: 0 auto;
+            margin-top: 10px;
+            max-width: 500px;
+            padding: 5px;
+            border: solid #fff 1px;
+            border-radius: 5px;
+        }
+        .sns_button {
+            margin: 0 auto;
+            margin-top: 10px;
+            text-align: right;
+            max-width: 500px;
+        }
+    }
+    .contents {
+        margin: 0 auto;
+        padding: 10px;
+        max-width: 500px;
+        background-color: #fff;
+        border-radius: 5px;
+        color: #404040;
+        h3 {
+            margin-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .contents_box {
+            display: table;
+            width: 100%;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+            .item_box {
+                display: table-cell;
+                width: 75%;
+                text-align: right;
+                .item_val {
+                    p {
+                        display: inline-block;
+                    }
+                    .num {
+                        width: 50px;
+                    }
+                }
+                .form_box {
+                    margin-top: 10px;
+                    .character_color, .buy_itemu_menu, .kakeru, .select_inner {
+                        display: inline-block;
+                    }
+                    .buy_itemu_menu {
+                        width: 100px;
+                        text-align: left;
+                        font-size: 12px;
+                    }
+                    .select_inner {
+                        padding: 5px 0;
+                        border: 1px solid #ddd;
+                        border-radius: 5px;
+                        overflow: hidden;
+                        vertical-align: middle;
+                        select {
+                            width: 130%;
+                            border: 0;
+                        }
+                    }
+                }
+            }
+            .item_total {
+                display: table-cell;
+                width: 25%;
+                text-align: right;
+            }
+        }
+    }
+    .total {
+        margin-top: 10px;
+        .total_all_val {
+            text-align: right;
+            p {
+                display: inline-block;
+                margin-left: 10px;
+                &.intro {
+                    margin-bottom: 10px;
+                    display: block;
+                    text-align-last: left;
+                    font-size: 14px;
+                    color: #666;
+                }
+            }
+        }
+        .total_all_price {
+            padding: 20px;
+            display: table;
+            width: 100%;  
+            margin-top: 10px;
+            border: solid 5px #404040;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 20px;
+            p {
+                font-weight: bold;
+                display: table-cell;
+                &.num {
+                    text-align: right;
+                }
+            }
+        }
+    }
+    .character_color {
+        width: 10px;
+        height: 10px;
+        border-radius: 2px;
+        &.hibiki {
+            background-color: #ff8c00;
+        }
+        &.tsubasa {
+            background-color: #4169e1;
+        }
+        &.chris {
+            background-color: #ff4500;
+        }
+        &.maria {
+            background-color: #a9a9a9;
+        }
+        &.sirabe {
+            background-color: #ff1493;
+        }
+        &.kirika {
+            background-color: #228b22;
+        }
+        &.miku {
+            background-color: #c71585;
+        }
+        &.pavaria {
+            background-color: #ffd700;
+        }
+    }
+}
