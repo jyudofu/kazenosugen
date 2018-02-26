@@ -1,8 +1,9 @@
 $(function(){
-	$("select").change(function() {
+	function valChange (){
+		$(function() {
 		var hairetu = [];
 		for(var i = 0; i < $(".buy_itemu_menu").length; i++){
-			
+
 			var select_name = $("select").eq(i).attr("name");
 			var item_name = $(".buy_itemu_menu").eq(i).data("name");
 			var item_price = $(".buy_itemu_menu").eq(i).data("price");
@@ -11,7 +12,6 @@ $(function(){
 
 			hairetu.push({name:select_name, item:item_name, val:item_select, price: item_total});
 		}
-		console.log(hairetu)
 		// 全体合計値
 		var priceTotal = 0;
 		var selectTotal = 0;
@@ -117,7 +117,7 @@ $(function(){
 			if (selectTotal > 0) {
 				$(".listButton").removeClass("disable")
 			} else {
-				$(".listButton").addClass("disable")				
+				$(".listButton").addClass("disable")
 			}
 			if (hairetu[j].val >= 1) {
 				var thisName = "." + hairetu[j].name;
@@ -130,19 +130,19 @@ $(function(){
 				}
 				if (hairetu[j].name === "live_t_S" || hairetu[j].name === "live_t_M" || hairetu[j].name === "live_t_L" || hairetu[j].name === "live_t_XL") {
 					$(".live_t").removeClass('hide')
-					$(".live_t").addClass('show')		
+					$(".live_t").addClass('show')
 				}
 				if (hairetu[j].name === "live_parker_M" || hairetu[j].name === "live_parker_L") {
 					$(".live_parker").removeClass('hide')
-					$(".live_parker").addClass('show')		
+					$(".live_parker").addClass('show')
 				}
 				if (hairetu[j].name === "muffler_towel") {
 					$(".muffler_towel").removeClass('hide')
-					$(".muffler_towel").addClass('show')		
+					$(".muffler_towel").addClass('show')
 				}
 				if (hairetu[j].name === "toto_bag") {
 					$(".toto_bag").removeClass('hide')
-					$(".toto_bag").addClass('show')		
+					$(".toto_bag").addClass('show')
 				}
 				if(hairetu[j].name === "half_band_hibiki" || hairetu[j].name === "half_band_tsubasa" || hairetu[j].name === "half_band_chris" || hairetu[j].name === "half_band_maria" || hairetu[j].name === "half_band_sirabe" || hairetu[j].name === "half_band_kirika" || hairetu[j].name === "half_band_miku" || hairetu[j].name === "half_band_gold") {
 					$(".half_band").removeClass('hide')
@@ -154,19 +154,19 @@ $(function(){
 				}
 				if (hairetu[j].name === "clear_file") {
 					$(".clear_file").removeClass('hide')
-					$(".clear_file").addClass('show')		
+					$(".clear_file").addClass('show')
 				}
 				if (hairetu[j].name === "pen_wright") {
 					$(".pen_wright").removeClass('hide')
-					$(".pen_wright").addClass('show')		
+					$(".pen_wright").addClass('show')
 				}
 				if (hairetu[j].name === "hinaarare") {
 					$(".hinaarare").removeClass('hide')
-					$(".hinaarare").addClass('show')		
+					$(".hinaarare").addClass('show')
 				}
 				if (hairetu[j].name === "mobile_battery") {
 					$(".mobile_battery").removeClass('hide')
-					$(".mobile_battery").addClass('show')		
+					$(".mobile_battery").addClass('show')
 				}
 				$(".check_list .character_t .total .num").html("￥" + character_t_price);
 				$(".check_list .live_t .total .num").html("￥" + live_t_price);
@@ -179,10 +179,8 @@ $(function(){
 				$(".check_list .hinaarare .total .num").html("￥" + hinaarare_price);
 				$(".check_list .play_button .total .num").html("￥" + play_button_price);
 				$(".check_list .mobile_battery .total .num").html("￥" + mobile_battery_price);
-				console.log(hairetu[j].val)
 			}
 		}
-		console.log(character_t_price)	
 		//　キャラクターTシャツ
 		$(".character_t .item_val .num").html(character_t_select + "個");
 		$(".character_t .item_total .num").html("￥" + character_t_price);
@@ -215,8 +213,22 @@ $(function(){
 		//　全体合計値
 		$(".total_all_val .num").html(selectTotal + "個");
 		$(".total_all_price .num").html(priceTotal + "円");
-	
+
 	});
+	}
+	$(".all_check-character_t").click(function() {
+		$(".check-character_t").val("1個")
+		valChange()
+	});
+	$(".all_check-half_band").click(function() {
+		$(".check-half_band").val("1個")
+		valChange()
+	});
+	$(".all_check-rubber_key_holder").click(function() {
+		$(".check-rubber_key_holder").val("1個")
+		valChange()
+	});
+	$("select").change(valChange)
 	$(".listButton").click(function() {
 		$(".wrapper").fadeOut(500)
 		$(".wrapper_list").fadeIn(500)
