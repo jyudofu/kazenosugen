@@ -238,6 +238,7 @@ $(function(){
 				$(".check_list .half_band .total .num").html("￥" + half_band_price);
 				$(".check_list .rubber_key_holder .total .num").html("￥" + rubber_key_holder_price);
 				$(".check_list .clear_file .total .num").html("￥" + clear_file_price);
+				$(".check_list .pen_wright .total .num").html("￥" + pen_wright_price);
 				$(".check_list .hinaarare .total .num").html("￥" + hinaarare_price);
 				$(".check_list .play_button .total .num").html("￥" + play_button_price);
 				$(".check_list .mobile_battery .total .num").html("￥" + mobile_battery_price);
