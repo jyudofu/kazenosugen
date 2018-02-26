@@ -119,6 +119,7 @@ $(function(){
 			} else {
 				$(".listButton").addClass("disable")
 			}
+
 			if (hairetu[j].val >= 1) {
 				var thisName = "." + hairetu[j].name;
 				$(thisName).removeClass('hide')
@@ -167,6 +168,67 @@ $(function(){
 				if (hairetu[j].name === "mobile_battery") {
 					$(".mobile_battery").removeClass('hide')
 					$(".mobile_battery").addClass('show')
+				}
+				$(".check_list .character_t .total .num").html("￥" + character_t_price);
+				$(".check_list .live_t .total .num").html("￥" + live_t_price);
+				$(".check_list .live_parker .total .num").html("￥" + live_parker_price);
+				$(".check_list .muffler_towel .total .num").html("￥" + muffler_towel_price);
+				$(".check_list .toto_bag .total .num").html("￥" + toto_bag_price);
+				$(".check_list .half_band .total .num").html("￥" + half_band_price);
+				$(".check_list .rubber_key_holder .total .num").html("￥" + rubber_key_holder_price);
+				$(".check_list .clear_file .total .num").html("￥" + clear_file_price);
+				$(".check_list .hinaarare .total .num").html("￥" + hinaarare_price);
+				$(".check_list .play_button .total .num").html("￥" + play_button_price);
+				$(".check_list .mobile_battery .total .num").html("￥" + mobile_battery_price);
+			}
+			else {
+				var thisName = "." + hairetu[j].name;
+				$(thisName).removeClass('show')
+				$(thisName).addClass('hide')
+				$(thisName + " .num").html(hairetu[j].val + "個")
+				if(hairetu[j].name === "character_t_hibiki" || hairetu[j].name === "character_t_tsubasa" || hairetu[j].name === "character_t_chris" || hairetu[j].name === "character_t_maria" || hairetu[j].name === "character_t_sirabe" || hairetu[j].name === "character_t_kirika" || hairetu[j].name === "character_t_miku" || hairetu[j].name === "character_t_san" || hairetu[j].name === "character_t_kari" || hairetu[j].name === "character_t_pure") {
+					$(".character_t").removeClass('show')
+					$(".character_t").addClass('hide')
+				}
+				if (hairetu[j].name === "live_t_S" || hairetu[j].name === "live_t_M" || hairetu[j].name === "live_t_L" || hairetu[j].name === "live_t_XL") {
+					$(".live_t").removeClass('show')
+					$(".live_t").addClass('hide')
+				}
+				if (hairetu[j].name === "live_parker_M" || hairetu[j].name === "live_parker_L") {
+					$(".live_parker").removeClass('show')
+					$(".live_parker").addClass('hide')
+				}
+				if (hairetu[j].name === "muffler_towel") {
+					$(".muffler_towel").removeClass('show')
+					$(".muffler_towel").addClass('hide')
+				}
+				if (hairetu[j].name === "toto_bag") {
+					$(".toto_bag").removeClass('show')
+					$(".toto_bag").addClass('hide')
+				}
+				if(hairetu[j].name === "half_band_hibiki" || hairetu[j].name === "half_band_tsubasa" || hairetu[j].name === "half_band_chris" || hairetu[j].name === "half_band_maria" || hairetu[j].name === "half_band_sirabe" || hairetu[j].name === "half_band_kirika" || hairetu[j].name === "half_band_miku" || hairetu[j].name === "half_band_gold") {
+					$(".half_band").removeClass('show')
+					$(".half_band").addClass('hide')
+				}
+				if(hairetu[j].name === "rubber_key_holder_hibiki" || hairetu[j].name === "rubber_key_holder_tsubasa" || hairetu[j].name === "rubber_key_holder_chris" || hairetu[j].name === "rubber_key_holder_maria" || hairetu[j].name === "rubber_key_holder_sirabe" || hairetu[j].name === "rubber_key_holder_kirika" || hairetu[j].name === "rubber_key_holder_miku" || hairetu[j].name === "rubber_key_holder_san" || hairetu[j].name === "rubber_key_holder_kari" || hairetu[j].name === "rubber_key_holder_pure") {
+					$(".rubber_key_holder").removeClass('show')
+					$(".rubber_key_holder").addClass('hide')
+				}
+				if (hairetu[j].name === "clear_file") {
+					$(".clear_file").removeClass('show')
+					$(".clear_file").addClass('hide')
+				}
+				if (hairetu[j].name === "pen_wright") {
+					$(".pen_wright").removeClass('show')
+					$(".pen_wright").addClass('hide')
+				}
+				if (hairetu[j].name === "hinaarare") {
+					$(".hinaarare").removeClass('show')
+					$(".hinaarare").addClass('hide')
+				}
+				if (hairetu[j].name === "mobile_battery") {
+					$(".mobile_battery").removeClass('show')
+					$(".mobile_battery").addClass('hide')
 				}
 				$(".check_list .character_t .total .num").html("￥" + character_t_price);
 				$(".check_list .live_t .total .num").html("￥" + live_t_price);
