@@ -18,12 +18,15 @@ $(function(){
 		//　キャラクターTシャツ
 		var character_t_price = 0;
 		var character_t_select = 0;
+		var character_t_count = 0;
 		//　ライブTシャツ
 		var live_t_price = 0;
 		var live_t_select = 0;
+		var live_t_count = 0;
 		//　ライブパーカー
 		var live_parker_price = 0;
 		var live_parker_select = 0;
+		var live_parker_count = 0;
 		//　マフラータオル
 		var muffler_towel_price = 0;
 		var muffler_towel_select = 0;
@@ -33,9 +36,11 @@ $(function(){
 		//　ハーフリストバンド
 		var half_band_price = 0;
 		var half_band_select = 0;
+		var half_band_count = 0;
 		//　ラバーキーホルダー
 		var rubber_key_holder_price = 0;
 		var rubber_key_holder_select = 0;
+		var rubber_key_holder_count = 0;
 		//　クリアファイルセット
 		var clear_file_price = 0;
 		var clear_file_select = 0;
@@ -119,7 +124,6 @@ $(function(){
 			} else {
 				$(".listButton").addClass("disable")
 			}
-
 			if (hairetu[j].val >= 1) {
 				var thisName = "." + hairetu[j].name;
 				$(thisName).removeClass('hide')
@@ -177,6 +181,7 @@ $(function(){
 				$(".check_list .half_band .total .num").html("￥" + half_band_price);
 				$(".check_list .rubber_key_holder .total .num").html("￥" + rubber_key_holder_price);
 				$(".check_list .clear_file .total .num").html("￥" + clear_file_price);
+				$(".check_list .pen_wright .total .num").html("￥" + pen_wright_price);
 				$(".check_list .hinaarare .total .num").html("￥" + hinaarare_price);
 				$(".check_list .play_button .total .num").html("￥" + play_button_price);
 				$(".check_list .mobile_battery .total .num").html("￥" + mobile_battery_price);
@@ -186,17 +191,45 @@ $(function(){
 				$(thisName).removeClass('show')
 				$(thisName).addClass('hide')
 				$(thisName + " .num").html(hairetu[j].val + "個")
-				if(hairetu[j].name === "character_t_hibiki" || hairetu[j].name === "character_t_tsubasa" || hairetu[j].name === "character_t_chris" || hairetu[j].name === "character_t_maria" || hairetu[j].name === "character_t_sirabe" || hairetu[j].name === "character_t_kirika" || hairetu[j].name === "character_t_miku" || hairetu[j].name === "character_t_san" || hairetu[j].name === "character_t_kari" || hairetu[j].name === "character_t_pure") {
-					$(".character_t").removeClass('show')
-					$(".character_t").addClass('hide')
+				if(hairetu[j].name === "character_t_hibiki" ||
+				hairetu[j].name === "character_t_tsubasa" ||
+				hairetu[j].name === "character_t_chris" ||
+				hairetu[j].name === "character_t_maria" ||
+				hairetu[j].name === "character_t_sirabe" ||
+				hairetu[j].name === "character_t_kirika" ||
+				hairetu[j].name === "character_t_miku" ||
+				hairetu[j].name === "character_t_san" ||
+				hairetu[j].name === "character_t_kari" ||
+				hairetu[j].name === "character_t_pure") {
+					$(thisName).removeClass('show')
+					$(thisName).addClass('hide')
+					character_t_count++
+					if (character_t_count === 10) {
+						$(".character_t").removeClass('show')
+						$(".character_t").addClass('hide')
+					}
 				}
-				if (hairetu[j].name === "live_t_S" || hairetu[j].name === "live_t_M" || hairetu[j].name === "live_t_L" || hairetu[j].name === "live_t_XL") {
-					$(".live_t").removeClass('show')
-					$(".live_t").addClass('hide')
+				if (hairetu[j].name === "live_t_S" ||
+				hairetu[j].name === "live_t_M" ||
+				hairetu[j].name === "live_t_L" ||
+				hairetu[j].name === "live_t_XL") {
+					$(thisName).removeClass('show')
+					$(thisName).addClass('hide')
+					live_t_count++
+					if (live_t_count === 4) {
+						$(".live_t").removeClass('show')
+						$(".live_t").addClass('hide')
+					}
 				}
-				if (hairetu[j].name === "live_parker_M" || hairetu[j].name === "live_parker_L") {
-					$(".live_parker").removeClass('show')
-					$(".live_parker").addClass('hide')
+				if (hairetu[j].name === "live_parker_M" ||
+				hairetu[j].name === "live_parker_L") {
+					$(thisName).removeClass('show')
+					$(thisName).addClass('hide')
+					live_parker_count++
+					if (live_parker_count === 2) {
+						$(".ive_parker").removeClass('show')
+						$(".ive_parker").addClass('hide')
+					}
 				}
 				if (hairetu[j].name === "muffler_towel") {
 					$(".muffler_towel").removeClass('show')
@@ -206,13 +239,39 @@ $(function(){
 					$(".toto_bag").removeClass('show')
 					$(".toto_bag").addClass('hide')
 				}
-				if(hairetu[j].name === "half_band_hibiki" || hairetu[j].name === "half_band_tsubasa" || hairetu[j].name === "half_band_chris" || hairetu[j].name === "half_band_maria" || hairetu[j].name === "half_band_sirabe" || hairetu[j].name === "half_band_kirika" || hairetu[j].name === "half_band_miku" || hairetu[j].name === "half_band_gold") {
-					$(".half_band").removeClass('show')
-					$(".half_band").addClass('hide')
+				if(hairetu[j].name === "half_band_hibiki" ||
+				hairetu[j].name === "half_band_tsubasa" ||
+				hairetu[j].name === "half_band_chris" ||
+				hairetu[j].name === "half_band_maria" ||
+				hairetu[j].name === "half_band_sirabe" ||
+				hairetu[j].name === "half_band_kirika" ||
+				hairetu[j].name === "half_band_miku" ||
+				hairetu[j].name === "half_band_gold") {
+					$(thisName).removeClass('show')
+					$(thisName).addClass('hide')
+					half_band_count++
+					if (half_band_count === 8) {
+						$(".half_band").removeClass('show')
+						$(".half_band").addClass('hide')
+					}
 				}
-				if(hairetu[j].name === "rubber_key_holder_hibiki" || hairetu[j].name === "rubber_key_holder_tsubasa" || hairetu[j].name === "rubber_key_holder_chris" || hairetu[j].name === "rubber_key_holder_maria" || hairetu[j].name === "rubber_key_holder_sirabe" || hairetu[j].name === "rubber_key_holder_kirika" || hairetu[j].name === "rubber_key_holder_miku" || hairetu[j].name === "rubber_key_holder_san" || hairetu[j].name === "rubber_key_holder_kari" || hairetu[j].name === "rubber_key_holder_pure") {
-					$(".rubber_key_holder").removeClass('show')
-					$(".rubber_key_holder").addClass('hide')
+				if(hairetu[j].name === "rubber_key_holder_hibiki" ||
+				hairetu[j].name === "rubber_key_holder_tsubasa" ||
+				hairetu[j].name === "rubber_key_holder_chris" ||
+				hairetu[j].name === "rubber_key_holder_maria" ||
+				hairetu[j].name === "rubber_key_holder_sirabe" ||
+				hairetu[j].name === "rubber_key_holder_kirika" ||
+				hairetu[j].name === "rubber_key_holder_miku" ||
+				hairetu[j].name === "rubber_key_holder_san" ||
+				hairetu[j].name === "rubber_key_holder_kari" ||
+				hairetu[j].name === "rubber_key_holder_pure") {
+					$(thisName).removeClass('show')
+					$(thisName).addClass('hide')
+					rubber_key_holder_count++
+					if (rubber_key_holder_count === 10) {
+						$(".rubber_key_holder").removeClass('show')
+						$(".rubber_key_holder").addClass('hide')
+					}
 				}
 				if (hairetu[j].name === "clear_file") {
 					$(".clear_file").removeClass('show')
