@@ -1,4 +1,11 @@
 .SPECIAL {
+	.wrapper.douka {
+		background-color: #ddd;
+		color: #000;
+		.aboutTxt h2 {
+			background-color: #ddd;
+		}
+	}
 	.wrapper {
 		background-color: #232426;
 		color:#fff;
