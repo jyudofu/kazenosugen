@@ -4,6 +4,8 @@ meta(name="viewport" content="width=device-width, initial-scale=1.0")
 meta(name="format-detection" content="telephone=no")
 if pageTitle
   title #{pageTitle} | #{site.name}
+else if pageTitleSpecial
+  title #{pageTitleSpecial}
 else
   title #{site.name}
 meta(name="description" content=pageDescription)
@@ -15,6 +17,8 @@ block css
 //- OGP
 if pageOgpTitle
   meta(property="og:title" content=pageOgpTitle + ' | ' + site.name)
+else if pageTitleSpecial
+  meta(property="og:title" content=pageTitleSpecial)
 else
   meta(property="og:title" content=site.name)
 meta(property="og:type" content=pageOgpType)
