@@ -13,9 +13,51 @@ append variables
   - var pageUrl= relativePath;
   - var pageTop="ILLUST"
 
+block comic
+    script(type="text/javascript").
+        $(function() {
+            var h = $(window).height();
+
+            $('.loader').height(h).css('display','block');
+        });
+
+        $(window).on('load', function () {
+            $('.loader').delay(1500).fadeOut(800);
+            $('.content').delay(1500).fadeIn(800);
+        });
+
+        //10秒たったら強制的にロード画面を非表示
+        $(function(){
+            setTimeout('stopload()',10000);
+        });
+
+        function stopload(){
+            $('.loader').delay(1500).fadeOut(800);
+            $('.content').delay(1500).fadeIn(800);
+        }
+        var progress = 0;
+        var imgCount = $('img').length;
+        $("img").each(function(){
+            var src = $(this).attr('src');
+            $("<img>").attr('src',src).on('load',function(){
+                progress++;
+            });
+        });
+        setInterval(function(){
+            $(".loadingBar").css({
+                'width': (progress / imgCount) * 100 + '%'
+            });
+        }, 1);
+
 block content
+    .loader
+        .sk-folding-cube
+            .sk-cube1.sk-cube
+            .sk-cube2.sk-cube
+            .sk-cube4.sk-cube
+            .sk-cube3.sk-cube
     .main.animsition
-    .content
+    .content.hide
         span.items.fade
             a(href="/assets/img/illust/gekkanoinori.png", target="blank", rel="lightbox[illust-group]").nailthumb-container.square-thumb
                 img(src="/assets/img/illust/gekkanoinori.png")
