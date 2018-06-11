@@ -4,8 +4,13 @@
 		mangaviewer:function(options){
 			var o =this;
 			o.options =options;
+			// ChromeのPull-to-Refleshから逃げるためにビューアーはスクロールを禁止
+			$('#viewer').on('touchmove.noScroll', function(e) {
+				e.preventDefault();
+			});
 			// ページャーの生成元要素
-			$(o).append('<div class="sheet"></div><div id="page-link" class="btn-toolbar"><div class="btn-group"></div><div id="page-list"></div></div>');
+			$(".slider").remove();
+			$(o).append('<div class="slider"><div class="sheet clearfix"></div><div id="page-link" class="btn-toolbar"><div class="btn-group"></div><div id="page-list"></div></div></div>');
 			//-------------------------------------
 			// 初期化処理
 			o.init_set =function(o){
@@ -68,19 +73,198 @@
 
 				// 画像表示
 				$('div.sheet').attr("id", ejections["sheet_num"]).children().remove();
+				$('div.sheet').addClass("left");
+				$("div").css({
+					"direction" : "ltr",
+					"unicode-bidi": "isolate"
+				});
 
-				if (o.options.page >= ejections["above_num"]) {
-					$('#'+ejections["sheet_num"]).append('<img id="page'+ ejections["above_num"] +'" class="left_page" rel="' + ejections["next_page"] +'" src="' + o.options.path + '/' + ejections["above_num"] + '.' + o.options.ext + '">');
-				}
-				$('#'+ejections["sheet_num"]).append('<img id="page'+ ejections["below_num"] +'" class="right_page" rel="' + ejections["prev_page"] +'" src="' + o.options.path + '/' + ejections["below_num"] + '.' + o.options.ext + '">');
 
-				// 次へと前へのページ設定
-				if ($('div.btn-group')){
-					$("button#btn-next").attr("rel", ejections["next_page"]);
-					$("button#btn-prev").attr("rel", ejections["prev_page"]);
+				var windowWidth = $(window).width();
+				$(".slider").width(windowWidth);
+				if (windowWidth >= 813) {
+					// PC表示
+					for (var i = o.options.page + 1; 1 <= i; i--) {
+						if(i === o.options.page + 1) {
+							$('#'+ejections["sheet_num"]).prepend('<div class="image close"><a id="page' + i + '" onClick="window.close();return false;">閉じる</a></div>');
+						} else {
+							$('#'+ejections["sheet_num"]).prepend('<div class="image"><img id="page'+ i +'" src="' + o.options.path + '/' + i + '.' + o.options.ext + '"></div>');
+						}
+						$("#page" + i).parent().css(
+							{
+								"width" : windowWidth / 2,
+							}
+						)
+					}
+				} else if (windowWidth >= 414) {
+					for (var i = o.options.page + 1; 1 <= i; i--) {
+						if(i === o.options.page + 1) {
+							$('#'+ejections["sheet_num"]).prepend('<div class="image close"><a id="page' + i + '" onClick="window.close();return false;">閉じる</a></div>');
+						} else {
+							$('#'+ejections["sheet_num"]).prepend('<div class="image"><img id="page'+ i +'" src="' + o.options.path + '/' + i + '.' + o.options.ext + '"></div>');
+						}
+						$("#page" + i).parent().css(
+							{
+								"width" : windowWidth / 2,
+							}
+						)
+					}
 				} else {
-					$('div.btn-group').append('<button id="btn-next" rel="' + ejections["next_page"] + '" class="btn">next</button>');
-					$('div.btn-group').append('<button id="btn-prev" rel="' + ejections["prev_page"] + '" class="btn">prev</button>');
+					// SP表示
+					for (var i = o.options.page + 1; 1 <= i; i--) {
+						if(i === o.options.page + 1) {
+							$('#'+ejections["sheet_num"]).prepend('<div class="image close"><a id="page' + i + '" onClick="window.close();return false;">閉じる</a></div>');
+						} else {
+							$('#'+ejections["sheet_num"]).prepend('<div class="image"><img id="page'+ i +'" src="' + o.options.path + '/' + i + '.' + o.options.ext + '"></div>');
+						}
+						$("#page" + i).parent().css(
+							{
+								"width" : windowWidth,
+							}
+						)
+					}
+				}
+				$("img").bind("load",function(){
+					var windowHeight = $(window).height();
+					var imageHeight = $(".sheet").innerHeight()
+					$(".slider").css({
+						"height" : imageHeight,
+						"padding-top" : (windowHeight - imageHeight) / 2
+					})
+					$(".close").css({
+						"line-height" : imageHeight + "px"
+					})
+					if (imageHeight >= windowHeight) {
+						$(".image img").css({
+							"width" : "auto",
+							"height" : windowHeight
+						})
+					}
+				})
+				// ボタン生成
+				$('div.btn-group').prepend('<div id="btn-prev" class="btn next left_arrow"></div>');
+				$('div.btn-group').prepend('<div id="btn-next" class="btn prev right_arrow"></div>');
+
+				// ボタンクリック処理
+				var clickCount = 0;
+				$("#btn-next").on("click",function(){
+					if (windowWidth >= 414) {
+						if(clickCount <= (o.options.page / 2) - 1) {
+							clickCount++;
+						}
+						$(".sheet").css({
+							"left" : -windowWidth * clickCount,
+							"right" : "auto"
+						})
+
+					} else {
+						if(clickCount <= (o.options.page) - 1) {
+							clickCount++;
+						}
+						$(".sheet").css({
+							"left" : -windowWidth * clickCount,
+							"right" : "auto"
+						})
+					}
+				});
+				$("#btn-prev").on("click",function(){
+					if(clickCount > 0) {
+						clickCount--;
+					}
+					if (windowWidth >= 414) {
+						$(".sheet").css({
+							"left" : -windowWidth * clickCount,
+							"right" : "auto"
+						})
+
+					} else {
+						$(".sheet").css({
+							"left" : -windowWidth * clickCount,
+							"right" : "auto"
+						})
+					}
+				});
+				var move = 'null';
+				/*
+				* タップ、スワイプ、指を離した時のイベントハンドラ
+				*/
+				$(".image").bind("touchstart", TouchStart);
+				$(".image").bind("touchmove" , TouchMove);
+				$(".image").bind("touchend" , TouchLeave);
+
+				/*
+				* タップした位置をメモリーする
+				*/
+				function TouchStart( event ) {
+					var pos = Position(event);
+					$(".image").data("memory",pos.x);
+					move = "null"
+				}
+
+				/*
+				* スワイプ
+				* タップした位置からプラスかマイナスかで左右移動を判断
+				*/
+				function TouchMove( event ) {
+					var pos = Position(event); //X,Yを得る
+					var memory = $(".image").data("memory")
+					var left = $(".sheet").position().left;
+					if (pos.x < memory){
+						move = "left";
+						$(".sheet").css({
+							"left" : left - (pos.x * 2),
+							"right" : "auto"
+						});
+					} else {
+						move = "right";
+						$(".sheet").css({
+							"left" : left + (pos.x * 2),
+							"right" : "auto"
+						});
+					}
+
+
+				}
+
+				/*
+				* 指を離す
+				*/
+				function TouchLeave( event ) {
+					if (move === "left") {
+						if (windowWidth >= 414) {
+							if(clickCount <= (o.options.page / 2) - 1) {
+								clickCount++;
+							}
+						} else {
+							if(clickCount <= (o.options.page) - 1) {
+								clickCount++;
+							}
+						}
+						$(".sheet").css({
+							"left" : -windowWidth * clickCount,
+							"right" : "auto"
+						})
+					} else if (move === "right") {
+						if(clickCount > 0) {
+							clickCount--;
+						}
+						$(".sheet").css({
+							"left" : -windowWidth * clickCount,
+							"right" : "auto"
+						})
+					}
+				}
+
+				/*
+				* 現在位置を得る
+				*/
+				function Position(e){
+					var x = e.originalEvent.touches[0].pageX;
+					var y = e.originalEvent.touches[0].pageY;
+					x = Math.floor(x);
+					y = Math.floor(y);
+					var pos = {'x':x , 'y':y};
+					return pos;
 				}
 			}
 
@@ -90,20 +274,198 @@
 
 				// 画像表示
 				$('div.sheet').attr("id", ejections["sheet_num"]).children().remove();
+				$('div.sheet').addClass("right");
+				$("div").css({
+					"direction" : "rtl",
+					"unicode-bidi": "isolate"
+				});
 
-				if (o.options.page >= ejections["above_num"]) {
-					$('#'+ejections["sheet_num"]).prepend('<img id="page'+ ejections["above_num"] +'" class="right_page" rel="' + ejections["next_page"] +'" src="' + o.options.path + '/' + ejections["above_num"] + '.' + o.options.ext + '">');
-				}
-				$('#'+ejections["sheet_num"]).prepend('<img id="page'+ ejections["below_num"] +'" class="left_page" rel="' + ejections["prev_page"] +'" src="' + o.options.path + '/' + ejections["below_num"] + '.' + o.options.ext + '">');
-
-				// 次へと前へのページ設定
-				if ($('div.btn-group')){
-					$("button#btn-next").attr("rel", ejections["next_page"]);
-					$("button#btn-prev").attr("rel", ejections["prev_page"]);
+				var windowWidth = $(window).width();
+				$(".slider").width(windowWidth);
+				if (windowWidth >= 813) {
+					// PC表示
+					for (var i = o.options.page + 1; 1 <= i; i--) {
+						if(i === o.options.page + 1) {
+							$('#'+ejections["sheet_num"]).prepend('<div class="image close"><a id="page' + i + '" onClick="window.close();return false;">閉じる</a></div>');
+						} else {
+							$('#'+ejections["sheet_num"]).prepend('<div class="image"><img id="page'+ i +'" src="' + o.options.path + '/' + i + '.' + o.options.ext + '"></div>');
+						}
+						$("#page" + i).parent().css(
+							{
+								"width" : windowWidth / 2,
+							}
+						)
+					}
+				} else if (windowWidth >= 414) {
+					for (var i = o.options.page + 1; 1 <= i; i--) {
+						if(i === o.options.page + 1) {
+							$('#'+ejections["sheet_num"]).prepend('<div class="image close"><a id="page' + i + '" onClick="window.close();return false;">閉じる</a></div>');
+						} else {
+							$('#'+ejections["sheet_num"]).prepend('<div class="image"><img id="page'+ i +'" src="' + o.options.path + '/' + i + '.' + o.options.ext + '"></div>');
+						}
+						$("#page" + i).parent().css(
+							{
+								"width" : windowWidth / 2,
+							}
+						)
+					}
 				} else {
-					$('div.btn-group').prepend('<button id="btn-next" rel="' + ejections["next_page"] + '" class="btn">next</button>');
-					$('div.btn-group').prepend('<button id="btn-prev" rel="' + ejections["prev_page"] + '" class="btn">prev</button>');
+					// SP表示
+					for (var i = o.options.page + 1; 1 <= i; i--) {
+						if(i === o.options.page + 1) {
+							$('#'+ejections["sheet_num"]).prepend('<div class="image close"><a id="page' + i + '" onClick="window.close();return false;">閉じる</a></div>');
+						} else {
+							$('#'+ejections["sheet_num"]).prepend('<div class="image"><img id="page'+ i +'" src="' + o.options.path + '/' + i + '.' + o.options.ext + '"></div>');
+						}
+						$("#page" + i).parent().css(
+							{
+								"width" : windowWidth,
+							}
+						)
+					}
 				}
+				$("img").bind("load",function(){
+					var windowHeight = $(window).height();
+					var imageHeight = $(".sheet").innerHeight()
+					$(".slider").css({
+						"height" : imageHeight,
+						"padding-top" : (windowHeight - imageHeight) / 2
+					})
+					$(".close").css({
+						"line-height" : imageHeight + "px"
+					})
+					if (imageHeight >= windowHeight) {
+						$(".image img").css({
+							"width" : "auto",
+							"height" : windowHeight
+						})
+					}
+				})
+				// ボタン生成
+				$('div.btn-group').prepend('<div id="btn-prev" class="btn prev right_arrow"></div>');
+				$('div.btn-group').prepend('<div id="btn-next" class="btn next left_arrow"></div>');
+
+				// ボタンクリック処理
+				var clickCount = 0;
+				$("#btn-next").on("click",function(){
+					if (windowWidth >= 414) {
+						if(clickCount <= (o.options.page / 2) - 1) {
+							clickCount++;
+						}
+						$(".sheet").css({
+							"right" : -windowWidth * clickCount,
+							"left" : "auto"
+						})
+					} else {
+						if(clickCount <= (o.options.page) - 1) {
+							clickCount++;
+						}
+						$(".sheet").css({
+							"right" : -windowWidth * clickCount,
+							"left" : "auto"
+						})
+					}
+				});
+				$("#btn-prev").on("click",function(){
+					if(clickCount > 0) {
+						clickCount--;
+					}
+					if (windowWidth >= 414) {
+						$(".sheet").css({
+							"right" : -windowWidth * clickCount,
+							"left" : "auto"
+						})
+
+					} else {
+						$(".sheet").css({
+							"right" : -windowWidth * clickCount,
+							"left" : "auto"
+						})
+
+					}
+				});
+				var move = 'null';
+				/*
+				* タップ、スワイプ、指を離した時のイベントハンドラ
+				*/
+				$(".image").bind("touchstart", TouchStart);
+				$(".image").bind("touchmove" , TouchMove);
+				$(".image").bind("touchend" , TouchLeave);
+
+				/*
+				* タップした位置をメモリーする
+				*/
+				function TouchStart( event ) {
+					var pos = Position(event);
+					$(".image").data("memory",pos.x);
+					move = "null"
+				}
+
+				/*
+				* スワイプ
+				* タップした位置からプラスかマイナスかで左右移動を判断
+				*/
+				function TouchMove( event ) {
+					var pos = Position(event); //X,Yを得る
+					var memory = $(".image").data("memory");
+					var right = parseInt($(".sheet").css("right"));
+					if (pos.x < memory){
+						move = "left";
+						$(".sheet").css({
+							"right" : right + (pos.x * 2),
+							"left" : "auto"
+						});
+					} else {
+						move = "right";
+						$(".sheet").css({
+							"right" : right - (pos.x * 2),
+							"left" : "auto"
+						});
+					}
+				}
+
+				/*
+				* 指を離す
+				*/
+				function TouchLeave( event ) {
+					if (move === "right") {
+						if (windowWidth >= 414) {
+							if(clickCount <= (o.options.page / 2) - 1) {
+								clickCount++;
+							}
+						} else {
+							if(clickCount <= (o.options.page) - 1) {
+								clickCount++;
+							}
+						}
+						$(".sheet").css({
+							"right" : -windowWidth * clickCount,
+							"left" : "auto"
+						})
+
+					} else if (move === "left") {
+						if(clickCount > 0) {
+								clickCount--;
+						}
+						$(".sheet").css({
+							"right" : -windowWidth * clickCount,
+							"left" : "auto"
+						})
+					}
+				}
+
+				/*
+				* 現在位置を得る
+				*/
+				function Position(e){
+					var x = e.originalEvent.touches[0].pageX;
+					var y = e.originalEvent.touches[0].pageY;
+					x = Math.floor(x);
+					y = Math.floor(y);
+					var pos = {'x':x , 'y':y};
+					return pos;
+				}
+
 			}
 
 			//-------------------------------------
@@ -151,14 +513,6 @@
 			// 初期化処理
 			o.init_set(o);
 
-			//-------------------------------------
-			// ページ更新処理
-			$("button.btn").on("click",function(){
-				o.paging($(this).attr('rel'));
-			});
-			$(".sheet").on("click","img",function(){
-				o.paging($(this).attr('rel'));
-			});
 		}
 	});
 

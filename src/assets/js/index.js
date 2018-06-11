@@ -77,4 +77,33 @@ $(function(){
 		$("#js_touhou").removeClass("selected");
 		$("#js_touhou").removeClass("firstSelect");
 	});
+	// ローダー
+	$(window).on('load', function () {
+		$('.loader').delay(1500).fadeOut(800);
+		$('.content').delay(1500).fadeIn(800);
+	});
+
+	//10秒たったら強制的にロード画面を非表示
+	$(function(){
+		setTimeout('stopload()',10000);
+	});
+
+	function stopload(){
+		$('.loader').delay(1500).fadeOut(800);
+		$('.content').delay(1500).fadeIn(800);
+	}
+	var progress = 0;
+	var imgCount = $('img').length;
+	$("img").each(function(){
+		var src = $(this).attr('src');
+		$("<img>").attr('src',src).on('load',function(){
+			progress++;
+		});
+	});
+	setInterval(function(){
+		$(".loadingBar").css({
+			'width': (progress / imgCount) * 100 + '%'
+		});
+	}, 1);
+
 });

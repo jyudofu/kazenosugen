@@ -18,29 +18,14 @@ block comic
     script(type="text/javascript").
         $(document).ready(function() {
             $(window).on('load resize', function(){
-                // 漫画ビュアープロパティ
-                var w = $(window).width();
-                var x = 480;
-                if (w <= x) {
-                    $('#viewer').mangaviewer({
-                        page: 72,	//ページ数
-                        path: '/assets/img/comics/tenourokuTenKitou/',	//ディレクトリパス
-                        ext: 'png',	//拡張子
-                        page_ejection: 'right' //ページ送り
-                    });
-                } else {
-                    $('#viewer').mangaviewer({
-                        page: 72,	//ページ数
-                        path: '/assets/img/comics/tenourokuTenKitou/',	//ディレクトリパス
-                        ext: 'png',	//拡張子
-                        page_ejection: 'left' //ページ送り
-                    });
-                }
+                $('#viewer').mangaviewer({
+                    page: 72,	//ページ数
+                    path: '/assets/img/comics/tenourokuTenKitou/',	//ディレクトリパス
+                    ext: 'png',	//拡張子
+                    page_ejection: 'right' //ページ送り
+                });
             });
         });
 
 block content
     #viewer
-
-block next
-    .next: a(href="/comic/tenourokuU/").nextTxt 有

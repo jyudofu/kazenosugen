@@ -11,7 +11,8 @@
     }
     /* ========== main ========== */
     .main {
-        overflow: hidden;
+        padding-top: 110px;
+        box-sizing: border-box;
         font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
     }
     .mainRight {
@@ -43,8 +44,7 @@
     .selectGenrebox {
         display: table-cell;
         width: 50%;
-        height: 400px;
-        line-height: 400px;
+        line-height: 80vh;
         text-align: center;
         cursor: pointer;
         transition-duration: 1.0s;

@@ -18,30 +18,14 @@ block comic
     script(type="text/javascript").
         $(document).ready(function() {
             $(window).on('load resize', function(){
-                // 漫画ビュアープロパティ
-                var w = $(window).width();
-                var x = 480;
-                if (w <= x) {
-                    $('#viewer').mangaviewer({
-                        page: 39,	//ページ数
-                        path: '/assets/img/comics/kyoutengu3/',	//ディレクトリパス
-                        ext: 'jpg',	//拡張子
-                        page_ejection: 'right' //ページ送り
-                    });
-                } else {
-                    $('#viewer').mangaviewer({
-                        page: 39,	//ページ数
-                        path: '/assets/img/comics/kyoutengu3/',	//ディレクトリパス
-                        ext: 'jpg',	//拡張子
-                        page_ejection: 'left' //ページ送り
-                    });
-                }
+                $('#viewer').mangaviewer({
+                    page: 39,	//ページ数
+                    path: '/assets/img/comics/kyoutengu3/',	//ディレクトリパス
+                    ext: 'jpg',	//拡張子
+                    page_ejection: 'right' //ページ送り
+                });
             });
         });
 
 block content
     #viewer
-
-block next
-    .back: a(href="/comic/kyoutengu2/").nextTxt 前へ
-    .next: a(href="/comic/kyoutengu4/").nextTxt 次へ

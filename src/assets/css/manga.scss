@@ -1,90 +1,123 @@
 .MANGA {
-    a:hover {
-        color:#ddd;
-    }
-    .head {
-        border-bottom: 1px solid #ddd;
-    }
-    .back, .next {
-        display: inline-block;
-        margin: 20px;
-        padding: 0 20px;
-        font-size: 20px;
-        font-weight: bold;
-        border: 1px solid #696969;
-        min-width: 100px;
-        height: 45px;
-        line-height: 45px;
-        text-align: center;
-        background-color: #fff;
-        -webkit-border-radius: 5px;
-                border-radius: 5px;
-        -webkit-box-sizing:border-box;
-                box-sizing:border-box;
-    }
-    .back:hover, .next:hover {
-        background-color: rgba(28, 28, 28, 1);
-    }
-    .arrow {
-        position: absolute;
-        left: 10px;
-        bottom: 10px;
-        width: 0;
-        height: 0;
-        border-top: 20px solid transparent;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-bottom: 20px solid #fff;
-        opacity: 0.8;
-    }
-    .backTxt {
-        text-decoration: none;
-        font-size: 16px;
-    }
-    .twitter-share-button {
-        float: right;
-        margin: 40px;
-    }
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overscroll-behavior: none;
+    background-color: #333;
     /* mangaviewer css */
+
     #viewer {
-        /*min-width: 860px;*/
+        position: relative;
+        min-height: 450px;
+        height: 100%;
+        overflow: hidden;
     }
-    #viewer .sheet{
+    .slider {
+        position: relative;
         width: 100%;
+        margin: auto;
+    }
+    .sheet {
+        position: absolute;
+        left: 0;
+        right: 0;
+        transition: all 0.4s;
+        white-space: nowrap;
+    }
+    .sheet.left .image:nth-child(odd){
+        text-align: right;
+    }
+    .sheet.right .image:nth-child(odd){
+        text-align: left;
+    }
+    
+    .image {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 0;
+    }
+    .sheet.right .image.close,
+    .sheet.left .image.close {
         text-align: center;
     }
-    #viewer img{
+    .image img {
+        width: 100%;
+    }
+    .image a {
         display: inline-block;
-        width: 50%;
+        padding: 0 25px;
+        line-height: 40px;
+        background-color: #d500f9;
+        font-size: 15px;
+        color: #fff;
+        border-radius: 20px;
         cursor: pointer;
     }
-
-    #viewer #page-link{
-        clear:both;
-        text-align:center;
+    
+    .btn-group {
+        position: absolute;
+        top: 0;
+        width: 100%;
     }
-    #viewer #page-link .btn.active{
-        border: inset 2px #086A87;
-        background-color:#2E9AFE;
+    .btn {
+        position: absolute;
+        top: 0;
+        width: 20%;
+        height: 100vh;
+        opacity: 0;
+        transition: all 0.4s;
+        cursor: pointer;
     }
-    .btn-group button {
-        margin-top: 10px;
-        width: 120px;
-        height: 30px;
-        background-color: #FFF;
-        -webkit-border-radius: 10px;
-                border-radius: 10px;
+    .btn:hover {
+        opacity: 0.8;
     }
-    #page-list button {
-        margin-top: 10px;
-        width: 25px;
-        height: 25px;
-        text-align: center;
+    .left_arrow::before,
+    .right_arrow::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 50px;
+        height: 50px;
+        border-radius: 30px;
+        background-color: #ddd;
     }
-    /* レスポンシブの設定 */
-    @media all and (max-width: 495px) {
-        #viewer img{
-            width: 100%;
+    .left_arrow::after,
+    .right_arrow::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+    .btn.next {
+        left: 0;
+    }
+    .left_arrow::before {
+        left: 30px;
+    }
+    .left_arrow::after {
+        left: 45px;
+        border-right: 15px solid #fff;
+    }
+    .btn.prev {
+        right: 0;
+    }
+    .right_arrow::before {
+        right: 30px;
+    }
+    .right_arrow::after {
+        right: 45px;
+        border-left: 15px solid #fff;
+    }
+    @media all and (max-width: 812px) {
+        .btn {
+            display: none;
         }
     }
 }

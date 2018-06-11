@@ -6,9 +6,14 @@ html(lang=pageLang)
 
   body
     div(class=pageTop)
-      include /_includes/_mangaHeader
+
+      .loader
+        .sk-folding-cube
+            .sk-cube1.sk-cube
+            .sk-cube2.sk-cube
+            .sk-cube4.sk-cube
+            .sk-cube3.sk-cube
 
       block content
 
-      include /_includes/_footer
       include /_includes/_script

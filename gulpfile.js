@@ -98,7 +98,7 @@ gulp.task('img',function(){
               this.emit('end');
           }
       }))
-      .pipe(cache(imageMin()))
+      // .pipe(cache(imageMin()))
       .pipe(gulp.dest(dest.img))
 });
 
