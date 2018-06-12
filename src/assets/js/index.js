@@ -41,17 +41,6 @@ $(function(){
 		return false;
 	});
 
-	// もっと見る
-	// $(function(){
-	// 	$('.content:not(.content:first-of-type)').css('display','none');//一番上の要素以外を非表示
-	// 	$('.more').nextAll('.more').css('display','none');//ボタンを非表示
-	// 	$('.more').on('click', function() {
-	// 		$(this).css('display','none');//押したボタンを非表示
-	// 		$(this).next('.content').slideDown('fast');
-	// 		$(this).nextAll('.more:first').css('display','block'); //次のボタンを表示
-	// 	});
-	// });
-
 	// 漫画ページジャンル選択
 	$("#js_touhou").click(function() {
 		$(".selectGenrebox").css({
@@ -79,31 +68,44 @@ $(function(){
 	});
 	// ローダー
 	$(window).on('load', function () {
-		$('.loader').delay(1500).fadeOut(800);
-		$('.content').delay(1500).fadeIn(800);
+		$('<img>').ready(function() {
+			var progress = 0;
+			var allImg = $('img');
+			var imgCount = allImg.length;
+			$("img").each(function(){
+				var src = $(this).attr('src');
+				$("<img>").attr('src',src).on('load',function(){
+					progress++;
+				});
+			});
+			var loading = setInterval(function(){
+				$(".loadingBar").css({
+					'width': Math.floor((progress / imgCount) * 100) + '%'
+				});
+				$(".loadingTxt").text(Math.floor((progress / imgCount) * 100) + '%');
+				if((progress / imgCount) * 100 === 100) {
+					$('.loader').delay(1500).fadeOut(800);
+					$('.content').delay(1500).fadeIn(800);
+				}
+			}, 1);
+			//10秒たったら強制的にロード画面を非表示
+			$(function(){
+				setTimeout(function () {
+					$('.loader').delay(1500).fadeOut(800);
+					$('.content').delay(1500).fadeIn(800);
+					stopTimer()
+				}, 10000);
+			});
+			function stopTimer(){
+				$(".loadingBar").css({
+					'width': '100%'
+				});
+				$(".loadingTxt").text('100%')
+				clearInterval(loading);
+			}
+
+		})
 	});
 
-	//10秒たったら強制的にロード画面を非表示
-	$(function(){
-		setTimeout('stopload()',10000);
-	});
-
-	function stopload(){
-		$('.loader').delay(1500).fadeOut(800);
-		$('.content').delay(1500).fadeIn(800);
-	}
-	var progress = 0;
-	var imgCount = $('img').length;
-	$("img").each(function(){
-		var src = $(this).attr('src');
-		$("<img>").attr('src',src).on('load',function(){
-			progress++;
-		});
-	});
-	setInterval(function(){
-		$(".loadingBar").css({
-			'width': (progress / imgCount) * 100 + '%'
-		});
-	}, 1);
 
 });

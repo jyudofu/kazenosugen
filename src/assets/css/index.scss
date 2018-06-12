@@ -320,12 +320,21 @@ a {
 	  opacity: 0;
 	}
   }
+.loadingTxt {
+	position: fixed;
+	top: 65%;
+	right: 10%;
+	line-height: 40px;
+	font-size: 18px;
+	color: #113285;
+	z-index: 5;
+}
 .loadingBar {
 	position: fixed;
 	top: 70%;
 	width: 0;
-	height: 3px;
-	background-color: #4c3527;
+	height: 5px;
+	background-color: #113285;
 	z-index: 5;
 }
 .loader {
@@ -335,6 +344,7 @@ a {
 	height: 100%;
 	background-color: #fff;
 	z-index: 4;
+	direction: ltr !important;
 	img {
 		position: absolute;
 		top: 0;
