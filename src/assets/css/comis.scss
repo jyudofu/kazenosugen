@@ -48,7 +48,7 @@
         cursor: pointer;
         transition-duration: 1.0s;
         color: #fff;
-        opacity: 0.5;
+        opacity: 1;
         text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
 
     }
@@ -91,7 +91,6 @@
         line-height: 40px;
         color: #fff;
         text-align: center;
-        opacity: 0.8;
     }
     /*東方*/
     .tenourokuU {
@@ -170,6 +169,9 @@
         }
         .manga {
             height: 420px;
+        }
+        .selectGenrebox {
+            opacity: 0.5;
         }
     }
 }

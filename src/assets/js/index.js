@@ -66,6 +66,8 @@ $(function(){
 		$("#js_touhou").removeClass("selected");
 		$("#js_touhou").removeClass("firstSelect");
 	});
+	$('.loader').show();
+	$('html, body').css('overflow', 'hidden');
 	// ローダー
 	$(window).on('load', function () {
 		$('<img>').ready(function() {
@@ -78,6 +80,7 @@ $(function(){
 					progress++;
 				});
 			});
+			// 画像がロードできたら画面を表示
 			var loading = setInterval(function(){
 				$(".loadingBar").css({
 					'width': Math.floor((progress / imgCount) * 100) + '%'
@@ -86,19 +89,21 @@ $(function(){
 				if((progress / imgCount) * 100 === 100) {
 					$('.loader').delay(500).fadeOut(800);
 					$('.content').delay(500).fadeIn(800);
+					$('html, body').removeAttr("style");
 				}
 			}, 1);
-			//10秒たったら強制的にロード画面を非表示
+			//5秒たったら強制的にロード画面を非表示
 			$(function(){
 				setTimeout(function () {
 					$('.loader').delay(500).fadeOut(800);
 					$('.content').delay(500).fadeIn(800);
+					$('html, body').removeAttr("style");
 					$(".loadingBar").css({
 						'width': '100%'
 					});
 					$(".loadingTxt").text('100%')
-						stopTimer()
-				}, 10000);
+					stopTimer()
+				}, 5000);
 			});
 			function stopTimer(){
 				$(".loadingBar").css({
@@ -109,6 +114,17 @@ $(function(){
 			}
 		})
 	});
-
+	//10秒たったら強制的にロード画面を非表示
+	$(function(){
+		setTimeout(function () {
+			$('.loader').delay(500).fadeOut(800);
+			$('.content').delay(500).fadeIn(800);
+			$('html, body').removeAttr("style");
+			$(".loadingBar").css({
+				'width': '100%'
+			});
+			$(".loadingTxt").text('100%')
+		}, 10000);
+	});
 
 });
