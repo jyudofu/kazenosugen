@@ -5,7 +5,7 @@ body {
 }
 
 .TOP {
-
+	height: 100%;
 	/* ========== main ========== */
 	.main {
 		position: relative;
@@ -15,7 +15,7 @@ body {
 			-o-background-size: cover;
 				background-size: cover;
 		background-position: center;
-		height: 100vh;
+		height: calc(100% - (35px * 2));
 	}
 	.side {
 		padding: 45px 0 0 45px;
@@ -57,9 +57,6 @@ body {
 	}
 	.pickUp_thum:hover {
 		opacity: 0.7;
-	}
-	.footer {
-		position: absolute;
 	}
 	/* レスポンシブの設定 */
 	@media all and (min-width: 768px) {

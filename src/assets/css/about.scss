@@ -6,8 +6,7 @@
 	}
 	/* ========== main ========== */
 	.main {
-		padding: 20px;
-		padding-top: 130px;
+		padding-top: 70px;
 		overflow: hidden;
 		background-repeat: no-repeat;
 		-webkit-background-size: cover;
@@ -29,12 +28,12 @@
 	}
 	.p_name {
 		display: inline-block;
-		font-size: 25px;
+		font-size: 18px;
 	}
 	.p_nameRuby {
 		margin-left: 30px;
 		display: inline-block;
-		font-size: 15px;
+		font-size: 14px;
 	}
 	.profileWrapper {
 		border: 1px solid #ddd;
@@ -57,12 +56,12 @@
 	}
 	.profileTxt {
 		padding: 10px;
-		font-size: 14px;
+		font-size: 10px;
 	}
 	.p_mainTxt {
 		margin-top: 20px;
 		padding: 0 20px;
-		font-size: 14px;
+		font-size: 12px;
 	}
 	h2 {
 		text-align: center;
@@ -188,12 +187,13 @@
 	.history  h3 {
 		position: relative;
 		padding-left: 15px;
+		font-size: 12px;
 	}
 
 
 	.history  p {
 		margin: 0 20px;
-		font-size: 12px;
+		font-size: 10px;
 	}
 	#output987356 a {
 		text-align: center;
@@ -206,7 +206,29 @@
 	}
 	/* レスポンシブの設定 */
 	@media all and (min-width: 768px) {
-		.mainRight {
+		.main {
+			padding: 20px;
+			padding-top: 130px;
+		}
+		.p_name {
+			font-size: 25px;
+		}
+		.p_nameRuby {
+			font-size: 15px;
+		}
+		.profileTxt {
+			font-size: 14px;
+		}
+		.p_mainTxt {
+			font-size: 14px;
+		}
+		.history  h3 {
+			font-size: 16px;
+		}
+		.history  p {
+			font-size: 12px;
+		}
+				.mainRight {
 			display: block;
 		}
 		.twitter-follow-button {

@@ -84,16 +84,20 @@ $(function(){
 				});
 				$(".loadingTxt").text(Math.floor((progress / imgCount) * 100) + '%');
 				if((progress / imgCount) * 100 === 100) {
-					$('.loader').delay(1500).fadeOut(800);
-					$('.content').delay(1500).fadeIn(800);
+					$('.loader').delay(500).fadeOut(800);
+					$('.content').delay(500).fadeIn(800);
 				}
 			}, 1);
 			//10秒たったら強制的にロード画面を非表示
 			$(function(){
 				setTimeout(function () {
-					$('.loader').delay(1500).fadeOut(800);
-					$('.content').delay(1500).fadeIn(800);
-					stopTimer()
+					$('.loader').delay(500).fadeOut(800);
+					$('.content').delay(500).fadeIn(800);
+					$(".loadingBar").css({
+						'width': '100%'
+					});
+					$(".loadingTxt").text('100%')
+						stopTimer()
 				}, 10000);
 			});
 			function stopTimer(){
@@ -103,7 +107,6 @@ $(function(){
 				$(".loadingTxt").text('100%')
 				clearInterval(loading);
 			}
-
 		})
 	});
 

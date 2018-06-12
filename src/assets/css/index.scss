@@ -23,6 +23,9 @@ a {
 	font-weight: bold;
 	border-bottom: 2px solid;
 }
+.main {
+	padding-top: 110px;
+}
 .spNav_ul .nowPage {
 	color: #CB1B45;
 	border-bottom: 0;
@@ -110,14 +113,11 @@ a {
 }
 .headNavButton {
 	position: absolute;
-	padding: 5px;
 	width: 40px;
 	height: 40px;
 	background-color: #a9a9a9;
 	color: #FFF;
-	margin: auto 0;
-	top: 0;
-	bottom: 0;
+	top: 10px;
 	right: 40px;
 	border-radius: 5px;
 	color: #fff;
@@ -134,30 +134,34 @@ a {
 	box-sizing: border-box;
 }
 .menu-trigger {
-	position: relative;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
 	width: 25px;
-	height: 25px;
+	height: 22px;
 }
 .menu-trigger span {
 	position: absolute;
 	left: 0;
 	width: 100%;
-	height: 4px;
+	height: 3px;
 	background-color: #fff;
-	border-radius: 4px;
 }
 .menu-trigger span:nth-of-type(1) {
 	top: 0;
 }
 .menu-trigger span:nth-of-type(2) {
-	top: 10.5px;
+	top: 9.5px;
 }
 .menu-trigger span:nth-of-type(3) {
 	bottom: 0;
 }
 .menu-trigger.active span:nth-of-type(1) {
-	-webkit-transform: translateY(11px) rotate(-45deg);
-	transform: translateY(11px) rotate(-45deg);
+	-webkit-transform: translateY(10px) rotate(-135deg);
+	transform: translateY(10px) rotate(-135deg);
 }
 .menu-trigger.active span:nth-of-type(2) {
 	left: 200%;
@@ -178,12 +182,12 @@ a {
 	}
 }
 .menu-trigger.active span:nth-of-type(3) {
-	-webkit-transform: translateY(-11px) rotate(45deg);
-	transform: translateY(-11px) rotate(45deg);
+	-webkit-transform: translateY(-9px) rotate(135deg);
+	transform: translateY(-9px) rotate(135deg);
 }
 .spNav {
 	position: absolute;
-	top: 100px;
+	top: 60px;
 	right: 0;
 	display: block;
 	text-align: center;
@@ -194,6 +198,7 @@ a {
 .spNav_ul > li {
 	margin-top: 20px;
 	border-bottom: 1px solid #000;
+	font-size: 14px;
 }
 .spNav_ul > li:first-child {
 	margin-top: 0;
@@ -259,7 +264,7 @@ a {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #333;
+	background-color: #4169e1;
 	-webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
 			animation: sk-foldCubeAngle 2.4s infinite linear both;
 	-webkit-transform-origin: 100% 100%;
@@ -321,20 +326,15 @@ a {
 	}
   }
 .loadingTxt {
-	position: fixed;
-	top: 65%;
-	right: 10%;
-	line-height: 40px;
 	font-size: 18px;
-	color: #113285;
-	z-index: 5;
+	color: #4169e1;
 }
 .loadingBar {
 	position: fixed;
 	top: 70%;
 	width: 0;
 	height: 5px;
-	background-color: #113285;
+	background-color: #4169e1;
 	z-index: 5;
 }
 .loader {
@@ -366,8 +366,30 @@ a {
 	display: block;
 }
 /* タブレットのスタイル */
-@media all and (min-width: 480px) {
+@media all and (max-width: 813px) {
+	.main {
+		padding-top: 70px;
 	}
+	.logoinnr {
+		margin-top: 8px;
+	}
+	.sk-folding-cube {
+		width: 40px;
+		height: 40px;
+	}
+	.logo {
+		height: 50px;
+	}
+	.header{
+		height: 60px;
+		.fixbar {
+			height: 60px;
+		}
+	}
+	.back_to_top {
+		bottom: 50px;
+	}
+}
 /* PCのスタイル */
 
 /*

@@ -4,6 +4,13 @@
     height: 100%;
     overscroll-behavior: none;
     background-color: #333;
+    .loadingTxt {
+        position: fixed;
+        top: 65%;
+        right: 10%;
+        line-height: 40px;
+        z-index: 5;
+    }
     /* mangaviewer css */
 
     #viewer {
@@ -30,7 +37,7 @@
     .sheet.right .image:nth-child(odd){
         text-align: left;
     }
-    
+
     .image {
         display: inline-block;
         vertical-align: top;
