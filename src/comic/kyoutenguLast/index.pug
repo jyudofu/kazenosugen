@@ -16,16 +16,13 @@ append variables
 
 block comic
     script(type="text/javascript").
-        $(document).ready(function() {
-            $(window).on('load resize', function(){
-                $('#viewer').mangaviewer({
-                    page: 59,	//ページ数
-                    path: '/assets/img/comics/kyoutenguLast/',	//ディレクトリパス
-                    ext: 'jpg',	//拡張子
-                    page_ejection: 'right' //ページ送り
-                });
+        $(window).on('load resize', function(){
+            $('#viewer').mangaviewer({
+                page: 59,	//ページ数
+                path: '/assets/img/comics/kyoutenguLast/',	//ディレクトリパス
+                ext: 'jpg',	//拡張子
+                page_ejection: 'right' //ページ送り
             });
         });
-
 block content
     #viewer
