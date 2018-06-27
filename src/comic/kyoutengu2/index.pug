@@ -16,13 +16,15 @@ append variables
 
 block comic
     script(type="text/javascript").
-        $(window).on('load resize', function(){
-            $('#viewer').mangaviewer({
-                page: 38,	//ページ数
-                path: '/assets/img/comics/kyoutengu2/',	//ディレクトリパス
-                ext: 'jpg',	//拡張子
-                page_ejection: 'right' //ページ送り
-            });
+        $('#viewer').mangaviewer({
+            page: 38,	//ページ数
+            path: '/assets/img/comics/kyoutengu2/',	//ディレクトリパス
+            ext: 'jpg',	//拡張子
+            page_ejection: 'right', //ページ送り
+            next_page: '../kyoutengu3',   //次の話へのパス
+            next_title: '次の話へ', //次の話へボタンの名称
+            prev_page: '../kyoutengu1/',   //前のページのパス
+            prev_title: '前の話へ' //前の話へボタンの名称
         });
 block content
     #viewer

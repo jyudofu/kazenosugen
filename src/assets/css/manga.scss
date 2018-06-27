@@ -2,7 +2,6 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    overscroll-behavior: none;
     background-color: #333;
     .loadingTxt {
         position: fixed;
@@ -12,61 +11,62 @@
         z-index: 5;
     }
     /* mangaviewer css */
-
     #viewer {
         position: relative;
         min-height: 450px;
         height: 100%;
         overflow: hidden;
     }
-    .slider {
+    #viewer .slider {
         position: relative;
         width: 100%;
         margin: auto;
     }
-    .sheet {
+    #viewer .sheet {
         position: absolute;
         left: 0;
         right: 0;
         transition: all 0.4s;
         white-space: nowrap;
     }
-    .sheet.left .image:nth-child(odd){
+    #viewer .sheet.left .image:nth-child(odd){
         text-align: right;
     }
-    .sheet.right .image:nth-child(odd){
+    #viewer .sheet.right .image:nth-child(odd){
         text-align: left;
     }
 
-    .image {
+    #viewer .image {
         display: inline-block;
         vertical-align: top;
         font-size: 0;
     }
-    .sheet.right .image.close,
-    .sheet.left .image.close {
+    #viewer .sheet.right .image.close,
+    #viewer .sheet.left .image.close {
         text-align: center;
     }
-    .image img {
+    #viewer .image img {
         width: 100%;
     }
-    .image a {
+    #viewer .image a {
         display: inline-block;
+        margin: 5px;
         padding: 0 25px;
         line-height: 40px;
         background-color: #d500f9;
         font-size: 15px;
         color: #fff;
         border-radius: 20px;
+        text-decoration: none;
         cursor: pointer;
     }
-    
-    .btn-group {
+
+    #viewer .btn-group {
         position: absolute;
         top: 0;
         width: 100%;
     }
-    .btn {
+    #viewer .btn {
         position: absolute;
         top: 0;
         width: 20%;
@@ -75,11 +75,11 @@
         transition: all 0.4s;
         cursor: pointer;
     }
-    .btn:hover {
+    #viewer .btn:hover {
         opacity: 0.8;
     }
-    .left_arrow::before,
-    .right_arrow::before {
+    #viewer .left_arrow::before,
+    #viewer .right_arrow::before {
         content: "";
         position: absolute;
         top: 0;
@@ -90,8 +90,8 @@
         border-radius: 30px;
         background-color: #ddd;
     }
-    .left_arrow::after,
-    .right_arrow::after {
+    #viewer .left_arrow::after,
+    #viewer .right_arrow::after {
         content: "";
         position: absolute;
         top: 0;
@@ -102,29 +102,148 @@
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
     }
-    .btn.next {
+    #viewer .btn.next {
         left: 0;
     }
-    .left_arrow::before {
+    #viewer .left_arrow::before {
         left: 30px;
     }
-    .left_arrow::after {
+    #viewer .left_arrow::after {
         left: 45px;
         border-right: 15px solid #fff;
     }
-    .btn.prev {
+    #viewer .btn.prev {
         right: 0;
     }
-    .right_arrow::before {
+    #viewer .right_arrow::before {
         right: 30px;
     }
-    .right_arrow::after {
+    #viewer .right_arrow::after {
         right: 45px;
         border-left: 15px solid #fff;
     }
+    #viewer #page-link {
+        height: 100%;
+    }
+    #viewer #page-list {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+    }
+    #viewer #page-list:hover .page_slide {
+        bottom: 0;
+    }
+    #viewer .page_slide {
+        position: fixed;
+        width: 100%;
+        bottom: -100px;
+        height: 50px;
+        z-index: 10;
+        background-color: #666;
+        transition: all 0.5s;
+    }
+    #viewer .page_slide.first {
+        bottom: 0;
+    }
+    #viewer .slider_wrapper {
+        margin: auto;
+        margin-top: 20px;
+        padding: 0 30px;
+        display: flex;
+    }
+    #viewer .min_page,
+    #viewer .max_page {
+        text-align: center;
+        width: 3em;
+        font-size: 14px;
+        color: #fff;
+    }
+    #viewer .slide_bar {
+        position: relative;
+        flex: 1;
+        height: 10px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        cursor: pointer;
+        background-color: #333;
+    }
+    #viewer .slide_bar_range {
+        position: relative;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0%;
+        height: 100%;
+        background-color: #4169e1;
+        border-radius: 10px;
+    }
+    #viewer .slide_bar_range::before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    #viewer .slide_bar_range::after {
+        content: "";
+        position: absolute;
+        top: -1px;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background-color: #4169e1;
+    }
+    #viewer .slide_bar_range.right::before {
+        right: 0;
+        margin-right: -10px;
+    }
+    #viewer .slide_bar_range.right::after {
+        right: -5px;
+    }
+    #viewer .slide_bar_range.left::before {
+        left: 0;
+        margin-left: -10px;
+    }
+    #viewer .slide_bar_range.left::after {
+        left: -5px;
+    }
+    #viewer .slide_num {
+        display: none;
+        position: absolute;
+        top: -50px;
+        right: -15px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        transition: all 0.3s;
+    }
+    #viewer .slide_num::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        right: 10px;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+        border-top: 8px solid #fff;
+    }
     @media all and (max-width: 812px) {
-        .btn {
+        #viewer .btn {
             display: none;
+        }
+        #viewer .slider_wrapper {
+            padding: 0;
+        }
+        #viewer .btn-group {
+            display: none;
+        }
+    }
+    @media all and (max-width: 414px) {
+        #viewer .page_slide {
+            bottom: 0;
         }
     }
 }
