@@ -615,13 +615,13 @@
 				var max_view = 0;
 				var page_list = [0]
 				if (windowWidth >= 414) {
-					if (( o.options.page % 2 ) == 0 ) {
+					if (( o.options.page % 2 ) === 0 ) {
 						max_view = Math.ceil(o.options.page / 2) + 1;
+						pages = Math.ceil(o.options.page / 2);
 					} else {
 						max_view = Math.ceil(o.options.page / 2);
+						pages = Math.ceil(o.options.page / 2) - 1;
 					}
-					pages = Math.ceil(o.options.page / 2) - 1;
-
 				} else {
 					max_view = Math.ceil(o.options.page) + 1;
 					pages = Math.ceil(o.options.page);
