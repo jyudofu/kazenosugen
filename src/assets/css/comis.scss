@@ -6,9 +6,6 @@
     .hide {
         display: none;
     }
-    li {
-        padding: 10px 0;
-    }
     /* ========== main ========== */
     .main {
         box-sizing: border-box;
@@ -21,76 +18,231 @@
         background-color: rgba(255, 255, 255, 0.5);
     }
     .mainLi_ul {
-        margin: auto;
-        width: 250px;
-        font-size: 0;
-    }
-    .mainLi_ul > li {
         width: 100%;
-        max-width: 250px;
-        display: inline-block;
-        vertical-align: top;
+        li {
+            padding: 20px;
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            box-sizing: border-box;
+            &:last-child {
+                border-bottom: 0;
+            }
+            &:nth-child(2n) {
+                .mangaLi_inner {
+                    flex-flow: row-reverse;
+                }
+                .textarea {
+                    margin-right: 30px;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .mangaLi_inner {
+        margin: auto;
+        display: flex;
+        width: 960px;
+        height: 420px;
+    }
+    .mangainner {
+        width: 300px;
+        height: 420px;
+        -webkit-background-size: cover;
+            -o-background-size: cover;
+                background-size: cover;
+        background-position: center;
+    }
+    .textarea {
+        position: relative;
+        flex: 1;
+        margin-right: 0;
+        margin-left: 30px;
+        padding: 30px 0;
+    }
+    .mangaTitle {
+        position: relative;
+        font-size: 20px;
+        &::after {
+            position: absolute;
+            top: 2.5px;
+            padding: 5px 10px;
+            font-size: 10px;
+            margin-left: 20px;
+            border-radius: 5px;
+        }
+        &.one:after {
+            content: "単発モノ";
+            color: #fff;
+            background-color: orange;
+        }
+        &.series:after {
+            content: "シリーズモノ";
+            color: #fff;
+            background-color: pink;
+        }
+        &.short::after {
+            content: "ショートコミック";
+            color: #fff;
+            background-color: blue;
+        }
+        &.finished::after {
+            content: "完結済み";
+            color: #fff;
+            background-color: #cb1b45;
+        }
+    }
+    .mangalink_inner {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
     }
     .manga {
         display: block;
-        height: 350px;
+        width: 100%;
+        margin-top: 30px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: #fff;
+        transition: 0.3s;
+        background-color: #cb1b45;
+        color: #fff;
+        &:hover {
+            opacity: 0.8;
+        }
+        &.series {
+            display: inline-block;
+            padding: 5px 10px;
+            width: auto;
+            min-width: 30px;
+            margin-right: 10px;
+        }
+    }
+    .mangaText {
+        margin-top: 40px;
+        line-height: 2;
+        max-height: 240px;
+        overflow: hidden;
     }
     .selectGenre {
-        display: table;
+        position: relative;
+        display: flex;
         width: 100%;
+        height: 80vh;
         font-size: 14px;
     }
     .selectGenrebox {
-        display: table-cell;
-        width: 50%;
-        line-height: 80vh;
-        text-align: center;
-        cursor: pointer;
-        transition-duration: 1.0s;
-        color: #fff;
+        transition-duration: 0.3s;
         opacity: 1;
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-
+        width: 50%;
+        overflow: scroll;
+        #touhou, #symphogear {
+            display: none;
+        }
+        &.selected {
+            width: 100%;
+            & > p {
+                height: 40px;
+                line-height: 40px;
+                &::before {
+                    content: "";
+                }
+            }
+            #touhou, #symphogear {
+                display: block;
+            }
+        }
+        &.unSelected {
+            width: 0;
+            font-size: 0;
+        }
     }
     .selectGenrebox:hover {
         opacity: 1;
     }
-    .selected {
-        opacity: 1;
+    .genreTitle {
+        position: relative;
+        height: 100%;
+        cursor: pointer;
+        p {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 140px;
+            height: 21px;
+            text-align: center;
+            color: #fff;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+            z-index: 1;
+        }
+        .touhou, .symphogear {
+            width: 100%;
+            height: 80vh;
+        }
     }
-    .touhou.firstSelect {
+    .selected {
+        .genreTitle {
+            height: 40px;
+        }
+        .touhou, .symphogear {
+            height: 40px;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+    .selectButton {
+        display: none;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 0 10px 0 30px;
+        height: 40px;
+        line-height: 40px;
+        background-color: #ddd;
+        cursor: pointer;
+        opacity: 0.5;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 15px;
+            width: 5px;
+            height: 10px;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 16px;
+            left: 7px;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-right: 8px solid #000;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .touhou {
         background:url(/assets/img/illust/summerdance.png);
         background-size: cover;
         background-position: center;
     }
-    .symphogear.firstSelect{
+    .symphogear{
         background:url(/assets/img/illust/gekisou.png);
         background-size: cover;
         background-position: center;
-    }
-    .touhou, #touhou h2 {
-        background:#00a5e7;
-    }
-    .symphogear, #symphogear h2{
-        background: #d78114;
-    }
-    #touhou, #symphogear {
-        border: 1px solid;
-    }
-    #touhou {
-        border-color: #00a5e7;
-    }
-    #symphogear {
-        border-color: #d78114;
-    }
-    #touhou nav {
-        padding: 30px 20px;
-    }
-    #touhou h2, #symphogear h2 {
-        height: 40px;
-        line-height: 40px;
-        color: #fff;
-        text-align: center;
     }
     /*東方*/
     .tenourokuU {
@@ -138,40 +290,66 @@
     .mahounoresipi {
         background-image: url(/assets/img/comics/mahounoresipi/mahounoresipi.jpg);
     }
-    .mangainner {
-        -webkit-background-size: cover;
-            -o-background-size: cover;
-                background-size: cover;
-    }
-    .mangainner:hover {
-        background-color: #000;
-        opacity: 0.5;
-    }
-    .mangaTitle {
-        margin-top: 10px;
-        font-size: 18px;
-        line-height: 1.2;
-        text-align: center;
-    }
     /* レスポンシブの設定 */
-    @media all and (min-width: 768px) {
-        .mainRight {
+    @media all and (max-width: 812px) {
+        .mangaLi_inner {
             display: block;
+            width: 100%;
+            height: auto;
         }
         .mainLi_ul {
-            width: 960px;
+            li {
+                min-width: 320px
+            }
         }
-        li {
-            padding: 10px;
+        .mangainner {
+            width: 100%;
+            height: 160px;
         }
-        .mainLi_ul > li {
-            max-width: 300px;
+        .textarea {
+            margin: 0;
+            padding: 10px 0;
+        }
+        .mangalink_inner {
+            position: static;
         }
         .manga {
-            height: 420px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .mangaText {
+            margin-top: 10px;
+            font-size: 12px;
+        }
+        .selectButton {
+            right: 0;
+            bottom: 0;
+        }
+    }
+    @media all and (max-width: 414px) {
+        .selectGenre {
+            display: block;
         }
         .selectGenrebox {
-            opacity: 0.5;
+            width: 100%;
+            height: 50%;
+            &.selected {
+                height: 100%;
+            }
+            &.unSelected {
+                width: 100%;
+                height: 0;
+            }
+        }
+        .genreTitle {
+            width: 100%;
+            height: 100%;
+            .touhou, .symphogear {
+                height: 100%;
+            }
+        }
+        .mangaTitle::after {
+            margin-left: 5px;
         }
     }
 }
