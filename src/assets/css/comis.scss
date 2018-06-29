@@ -136,6 +136,7 @@
         opacity: 1;
         width: 50%;
         overflow: scroll;
+        -webkit-overflow-scrolling: touch;
         #touhou, #symphogear {
             display: none;
         }
