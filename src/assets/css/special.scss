@@ -68,6 +68,11 @@
 		margin: 0;
 		max-width: 300px;
 		height: auto;
+		&.black {
+			p {
+				color: #000;
+			}
+		}
 	}
 	.logo img {
 		margin-bottom: 10px;
