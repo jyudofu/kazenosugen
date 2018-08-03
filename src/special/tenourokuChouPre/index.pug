@@ -1,0 +1,86 @@
+extend /_includes/_specialLayout
+append variables
+  //- Required
+  - var pageTitle= "東方天王禄 頂 プレビュー版 特設サイト";
+  - var pageDescription= "東方天王禄 頂 プレビュー版の特設サイトです";
+  - var pageKeywords= "東方Project, 東方, 比那名居天子";
+  //- Optional
+  - var pageOgpTitle= "東方天王禄 頂 プレビュー版 特設サイト";
+  - var pageOgpImage= "/assets/img/comics/tenourokuChou/tenourokuChou.jpg"
+  - var pageLang= "ja";
+  - var pageOgpType= "website";
+  //- Not modified
+  - var pageUrl= relativePath;
+  - var nowPage= "pageTop";
+  - var pageTop="SPECIAL"
+
+block content
+    .loader
+        .loadingBar
+        .loadingTxt
+    .wrapper
+        .head
+            .headContent.cf
+                a(href="" class="logo")
+                    img(src="/assets/img/special/logo_b.png", alt="kazenosougen")
+                    p Comic Market 94 新刊特設サイト
+                .event
+                    a(href="http://twitter.com/share" class="twitter-share-button" data-hashtags="東方天王禄頂プレビュー版") Tweet
+                    script.
+                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        .main
+            .mainImg.chouPre
+                h2 Comic Market 94 / 1日目 東6ホール "セ"48b
+            .catchCopy 「天」の最果てに、<br>命の上に立つもの「有」り―。
+            .copy 風の草原が送る「東方天王禄シリーズ」第三弾。<br>「頂」は、「有」同様シリーズの外伝的なお話になります。ぶつ切りだった「有」と「天」を補完し、少しずつシリーズのつながりが見えてくるお話でもありますが、今回はプレビュー版での頒布となります。<br>すべてをお見せすることが出来ないのが心苦しいですが、久しぶりの天王禄シリーズの頒布となりますので、楽しんでいただければ幸いです。
+        .about.cf
+            h2 ABOUT
+            .aboutImg
+                img(src="/assets/img/comics/tenourokuChou/tenourokuChou.jpg", alt="")
+            dl.aboutTxt
+                dt
+                    h2 TITLE
+                dd
+                    p 東方天王禄 頂 プレビュー版
+                dt
+                    h2 CIRCLE
+                dd
+                    p 風の草原
+                dt
+                    h2 RELESE DATA
+                dd
+                    p 2018年8月10日
+                dt
+                    h2 PRICE
+                dd
+                    p 28P / 300円
+                dt
+                    h2 BOOTH
+                dd
+                    p Comic Market94 / 1日目 東6ホール "セ"48b
+            h2 SAMPLE
+            .sample
+                a(href="/assets/img/comics/tenourokuChou/2.jpg" target="brank", rel="lightbox[chouPre-group]")
+                    img(src="/assets/img/comics/tenourokuChou/2.jpg", alt="")
+                a(href="/assets/img/comics/tenourokuChou/3.jpg" target="brank", rel="lightbox[chouPre-group]")
+                    img(src="/assets/img/comics/tenourokuChou/3.jpg", alt="")
+                a(href="/assets/img/comics/tenourokuChou/4.jpg" target="brank", rel="lightbox[chouPre-group]")
+                    img(src="/assets/img/comics/tenourokuChou/4.jpg", alt="")
+                a(href="/assets/img/comics/tenourokuChou/5.jpg" target="brank", rel="lightbox[chouPre-group]")
+                    img(src="/assets/img/comics/tenourokuChou/5.jpg", alt="")
+                a(href="/assets/img/comics/tenourokuChou/6.jpg" target="brank", rel="lightbox[chouPre-group]")
+                    img(src="/assets/img/comics/tenourokuChou/6.jpg", alt="")
+                a(href="/assets/img/comics/tenourokuChou/7.jpg" target="brank", rel="lightbox[chouPre-group]")
+                    img(src="/assets/img/comics/tenourokuChou/7.jpg", alt="")
+            h2 DISTRIBUTION
+            .distribution
+                a(href="" target="brank", rel="lightbox[chouDistr]")
+                    img(src="", alt="")
+        .linkButton
+            h2 READ
+            a(href="/comic/tenourokuChou/" class="button" target="brank") 本編を読む
+            .note ※コチラはサンプルではなく、全ページでの公開になります。
+        .endtweet
+            a(href="http://twitter.com/share" class="twitter-share-button" data-hashtags="東方天王禄頂プレビュー版") Tweet
+            script.
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');

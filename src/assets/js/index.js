@@ -85,7 +85,7 @@ $(function(){
 			// 画像がロードできたら画面を表示
 			var loading = setInterval(function(){
 				$(".loadingBar").css({
-					'width': Math.floor((progress / imgCount) * 100) + '%'
+					'width': (progress / imgCount) * 100 + '%'
 				});
 				$(".loadingTxt").text(Math.floor((progress / imgCount) * 100) + '%');
 				if((progress / imgCount) * 100 === 100) {
