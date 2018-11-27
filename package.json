@@ -20,16 +20,18 @@
     "browser-sync": "^2.18.5",
     "browserify": "^15.2.0",
     "gulp": "^3.9.1",
+    "gulp-cache": "*",
     "gulp-clean-css": "^3.9.2",
     "gulp-concat": "^2.6.1",
     "gulp-data": "^1.2.1",
+    "gulp-imagemin": "*",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-pug": "^3.2.0",
     "gulp-uglify": "^3.0.0",
-    "gulp-imagemin": "*",
-    "gulp-cache": "*",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.11",
+    "minimatch": "^3.0.4"
   },
   "dependencies": {
     "gulp-sass": "^3.1.0"
