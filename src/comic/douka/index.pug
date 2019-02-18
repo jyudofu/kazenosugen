@@ -1,0 +1,30 @@
+extend /_includes/_mangaLayout
+append variables
+  //- Required
+  - var pageTitle= "道花 -cross road-";
+  - var pageDescription= "";
+  - var pageKeywords= "戦姫絶唱シンフォギア, シンフォギア, 立花響, 小日向未来, 風鳴翼, マリア・カデンツァヴナ・イヴ, 雪音クリス, 月読調, 暁切歌";
+  //- Optional
+  - var pageOgpTitle= "道花 -cross road-";
+  - var pageOgpImage= "/assets/img/comics/douka/1.png"
+  - var pageLang= "ja";
+  - var pageOgpType= "website";
+  //- Not modified
+  - var pageUrl= relativePath;
+  - var nowPage= "pageTop";
+  - var pageTop="MANGA"
+
+block comic
+    script(type="text/javascript").
+        $('#viewer').mangaviewer({
+            page: 57,	//ページ数
+            path: '/assets/img/comics/douka/',	//ディレクトリパス
+            ext: 'png',	//拡張子
+            page_ejection: 'right', //ページ送り
+            next_page: '',   //次の話へのパス
+            next_title: '', //次の話へボタンの名称
+            prev_page: '',   //前のページのパス
+            prev_title: '' //前の話へボタンの名称
+        });
+block content
+    #viewer
