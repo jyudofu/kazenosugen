@@ -1,0 +1,116 @@
+extend /_includes/_specialLayout
+append variables
+  //- Required
+  - var pageTitleSpecial= "絶唱ステージ9特設サイト｜かざぐるま";
+  - var pageDescription= "風の草原の絶唱ステージ9新刊特設サイトです。";
+  - var pageKeywords= "戦姫絶唱シンフォギア, シンフォギア, 立花響, 風鳴翼, 雪音クリス, マリア・カデンツァヴナ・イヴ, 暁切歌, 月読調, 小日向未来";
+  //- Optional
+  - var pageOgpTitle= "絶唱ステージ9特設サイト｜かざぐるま";
+  - var pageOgpImage= "/assets/img/comics/kazaguruma/kazaguruma.png"
+  - var pageLang= "ja";
+  - var pageOgpType= "website";
+  //- Not modified
+  - var pageUrl= relativePath;
+  - var nowPage= "pageTop";
+  - var pageTop="SPECIAL"
+
+block comic
+    script(src="/assets/js/lightbox.min.js")
+    script(type="text/javascript").
+        $(function() {
+            var h = $(window).height();
+
+            $('.loader').height(h).css('display','block');
+        });
+
+        $(window).on('load', function () {
+            $('.loader').delay(1500).fadeOut(800);
+        });
+
+        //10秒たったら強制的にロード画面を非表示
+        $(function(){
+            setTimeout('stopload()',10000);
+        });
+
+        function stopload(){
+            $('.loader').delay(1500).fadeOut(800);
+        }
+        var progress = 0;
+        var imgCount = $('img').length;
+        $("img").each(function(){
+            var src = $(this).attr('src');
+            $("<img>").attr('src',src).on('load',function(){
+                progress++;
+            });
+        });
+        setInterval(function(){
+            $(".loadingBar").css({
+                'width': (progress / imgCount) * 100 + '%'
+            });
+        }, 1);
+
+block content
+    .loader
+        .loadingBar
+
+    .wrapper.kazaguruma
+        .head
+            .headContent.cf
+                a(href="" class="logo")
+                    img(src="/assets/img/special/logo.png", alt="kazenosougen")
+                    p 絶唱ステージ9 新刊特設サイト
+                .event
+                    a(href="http://twitter.com/share" class="twitter-share-button" data-hashtags="道花") Tweet
+                    script.
+                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        .main
+            .mainImg.kazaguruma
+                .titleImg_inner
+                h2 絶唱ステージ9 / 絶唱48
+            .catchCopy 風が吹く。まわれ、まわれ、かざぐるま。
+            .copy 風の草原が送るシンフォギア二次創作第三弾。イギリスでの初ワンマンライブの様子を描くライブメイキングムービー的な本です。始まりの歌（バベル）とは、それはただの風だった。
+        .about.cf
+            h2 ABOUT
+            .aboutImg
+                img(src="/assets/img/comics/kazaguruma/kazaguruma.jpg", alt="かざぐるま")
+            dl.aboutTxt
+                dt
+                    h2 TITLE
+                dd
+                    p かざぐるま
+                dt
+                    h2 CIRCLE
+                dd
+                    p 風の草原
+                dt
+                    h2 RELESE DATA
+                dd
+                    p 2019年3月31日
+                dt
+                    h2 PRICE
+                dd
+                    p 36P / 500円
+                dt
+                    h2 BOOTH
+                dd
+                    p 絶唱48
+            h2 SAMPLE
+            .sample
+                a(href="/assets/img/comics/kazaguruma/1.jpg", target="brank", rel="lightbox[kazaguruma-group]")
+                    img(src="/assets/img/comics/kazaguruma/1.jpg", alt="")
+                a(href="/assets/img/comics/kazaguruma/3.jpg", target="brank", rel="lightbox[kazaguruma-group]")
+                    img(src="/assets/img/comics/kazaguruma/3.jpg", alt="")
+                a(href="/assets/img/comics/kazaguruma/4.jpg", target="brank", rel="lightbox[kazaguruma-group]")
+                    img(src="/assets/img/comics/kazaguruma/4.jpg", alt="")
+                a(href="/assets/img/comics/kazaguruma/5.jpg", target="brank", rel="lightbox[kazaguruma-group]")
+                    img(src="/assets/img/comics/kazaguruma/5.jpg", alt="")
+                a(href="/assets/img/comics/kazaguruma/6.jpg", target="brank", rel="lightbox[kazaguruma-group]")
+                    img(src="/assets/img/comics/kazaguruma/6.jpg", alt="")
+            .store
+                h2 STORE
+                a(href="" border="0" target="brank")
+                    img(src="https://www.melonbooks.co.jp/user_data/bnr/banner_566x100.gif" alt="メロンブックス")
+            .endtweet
+                a(href="http://twitter.com/share" class="twitter-share-button" data-hashtags="道花") Tweet
+                script.
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
